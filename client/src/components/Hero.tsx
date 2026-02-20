@@ -34,7 +34,7 @@ export default function Hero() {
               className="flex items-center gap-3 mb-8"
             >
               <div className="w-12 h-px bg-[oklch(0.75_0.14_85)]" />
-              <span className="section-label">B2B AI Infrastructure Agency</span>
+              <span className="section-label">B2B AI Infrastructure Engineering</span>
             </motion.div>
 
             <motion.h1

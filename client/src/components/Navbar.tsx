@@ -48,7 +48,7 @@ export default function Navbar() {
               Beacon Labs
             </span>
             <span className="hidden md:block font-mono text-[0.6rem] tracking-[0.2em] uppercase text-[oklch(0.45_0.09_185)] -mt-0.5">
-              AI Infrastructure Agency
+              AI Infrastructure Engineering
             </span>
           </div>
         </a>
