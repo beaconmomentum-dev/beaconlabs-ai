@@ -40,13 +40,31 @@ export default function Contact() {
     setSending(true);
 
     const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData);
+    const data = Object.fromEntries(formData) as Record<string, string>;
 
-    // For now, simulate form submission
-    // In production, this would POST to a backend endpoint or service like Formspree
+    // Split name into first/last for CRM
+    const nameParts = (data.name || "").trim().split(/\s+/);
+    const firstName = nameParts[0] || "";
+    const lastName = nameParts.slice(1).join(" ") || "";
+
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email: data.email,
+          company: data.company || "",
+          website: data.website || "",
+          service: data.service || "",
+          budget: data.budget || "",
+          message: data.message || "",
+        }),
+      });
+
+      if (!response.ok) throw new Error("Failed to submit");
+
       setSent(true);
       toast.success("Message sent! We'll be in touch within 24 hours.");
     } catch {

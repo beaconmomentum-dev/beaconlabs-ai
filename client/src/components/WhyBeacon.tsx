@@ -108,8 +108,8 @@ export default function WhyBeacon() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="max-w-4xl mx-auto"
         >
-          {/* Headers */}
-          <div className="grid grid-cols-2 gap-4 mb-4">
+          {/* Headers — hidden on mobile since cards stack with labels */}
+          <div className="hidden md:grid grid-cols-2 gap-4 mb-4">
             <div className="font-mono text-[0.65rem] tracking-[0.2em] uppercase text-[oklch(0.50_0.02_240)] px-4">
               Typical AI Agency / Software Reseller
             </div>
@@ -126,18 +126,24 @@ export default function WhyBeacon() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.4 + i * 0.08 }}
-                className="grid grid-cols-2 gap-4"
+                className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4"
               >
                 {/* Typical */}
                 <div className="flex items-start gap-3 p-4 rounded-sm bg-[oklch(0.93_0.006_80)] border border-[oklch(0.88_0.01_80)]">
                   <X size={14} className="text-[oklch(0.55_0.10_20)] mt-0.5 shrink-0" />
-                  <span className="text-sm text-[oklch(0.45_0.03_240)]">{row.typical}</span>
+                  <div>
+                    <span className="md:hidden font-mono text-[0.55rem] tracking-[0.15em] uppercase text-[oklch(0.55_0.10_20)] block mb-1">Typical Agency</span>
+                    <span className="text-sm text-[oklch(0.45_0.03_240)]">{row.typical}</span>
+                  </div>
                 </div>
 
                 {/* Beacon */}
                 <div className="flex items-start gap-3 p-4 rounded-sm bg-[oklch(0.45_0.09_185/0.06)] border border-[oklch(0.45_0.09_185/0.15)]">
                   <Check size={14} className="text-[oklch(0.45_0.09_185)] mt-0.5 shrink-0" />
-                  <span className="text-sm text-[oklch(0.25_0.03_240)] font-medium">{row.beacon}</span>
+                  <div>
+                    <span className="md:hidden font-mono text-[0.55rem] tracking-[0.15em] uppercase text-[oklch(0.45_0.09_185)] block mb-1">Beacon Labs</span>
+                    <span className="text-sm text-[oklch(0.25_0.03_240)] font-medium">{row.beacon}</span>
+                  </div>
                 </div>
               </motion.div>
             ))}

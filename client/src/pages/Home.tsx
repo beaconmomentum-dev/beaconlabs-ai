@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import VideoExplainer from "@/components/VideoExplainer";
 import TrustSignals from "@/components/TrustSignals";
 import Services from "@/components/Services";
 import WhyBeacon from "@/components/WhyBeacon";
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
+      <VideoExplainer />
       <TrustSignals />
       <Services />
       <WhyBeacon />

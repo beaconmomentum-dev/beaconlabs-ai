@@ -92,7 +92,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 1 }}
-              className="flex gap-8 mt-14 pt-8 border-t border-[oklch(0.45_0.09_185/0.15)]"
+              className="flex flex-wrap gap-6 sm:gap-8 mt-14 pt-8 border-t border-[oklch(0.45_0.09_185/0.15)]"
             >
               {stats.map((stat) => (
                 <div key={stat.label} className="flex items-start gap-3">
@@ -162,7 +162,7 @@ export default function Hero() {
       {/* Bottom edge — smooth transition to trust signals */}
       <div className="absolute bottom-0 left-0 right-0 translate-y-px">
         <svg viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none" className="w-full h-12 md:h-16">
-          <path d="M0 80 L0 40 Q360 0 720 20 Q1080 40 1440 10 L1440 80 Z" fill="#1a3d3f" />
+          <path d="M0 80 L0 40 Q360 0 720 20 Q1080 40 1440 10 L1440 80 Z" fill="oklch(0.18 0.035 200)" />
         </svg>
       </div>
     </section>
