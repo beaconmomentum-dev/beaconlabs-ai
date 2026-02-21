@@ -10,8 +10,8 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Play, Pause, Search, MessageSquare, TrendingUp, ArrowRight } from "lucide-react";
 
-const VIDEO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663026807979/wnkOidKGEqcNeNMW.mp4";
-const POSTER_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663026807979/utjlAPHCpKXkUrGC.jpg";
+const VIDEO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663026807979/KEPIXIAhpwLZWJuC.mp4";
+const POSTER_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663026807979/dmWhrGDJhoMTElAh.jpg";
 
 const keyPoints = [
   {
