@@ -10,8 +10,8 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Play, Pause, Search, MessageSquare, TrendingUp, ArrowRight } from "lucide-react";
 
-const VIDEO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663026807979/KEPIXIAhpwLZWJuC.mp4";
-const POSTER_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663026807979/dmWhrGDJhoMTElAh.jpg";
+const VIDEO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663026807979/DilGnxILpiNtIMqN.mp4";
+const POSTER_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663026807979/SVoiEwaFirNNaQTT.jpg";
 
 const keyPoints = [
   {
@@ -99,7 +99,7 @@ export default function VideoExplainer() {
               <video
                 ref={videoRef}
                 src={VIDEO_URL}
-                className="w-full aspect-video object-cover bg-[oklch(0.12_0.03_240)]"
+                className="w-full aspect-[1920/1180] object-cover bg-[oklch(0.12_0.03_240)]"
                 playsInline
                 preload="metadata"
                 poster={POSTER_URL}
