@@ -1,5 +1,5 @@
 /*
- * VideoExplainer — Blueprint Aesthetic
+ * VideoExplainer — Blueprint Aesthetic (V6 Final)
  * UGC-style explainer video section featuring Bob Burr (founder).
  * Positioned between Hero and TrustSignals to capture attention early.
  * Dark teal background with blueprint grid, asymmetric layout:
