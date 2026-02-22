@@ -85,8 +85,9 @@ export default function Process() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-[oklch(0.45_0.03_240)] mt-3 max-w-2xl mx-auto text-lg"
           >
-            Every project follows our proven four-phase methodology.
-            No surprises, no scope creep — just systematic execution.
+            Every engagement starts with a conversation — we learn your business,
+            identify the highest-impact opportunities, and build a custom solution.
+            No templates. No surprises. Just systematic, bespoke execution.
           </motion.p>
         </div>
 

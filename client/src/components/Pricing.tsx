@@ -16,7 +16,7 @@ const tiers = [
     priceMax: "$5,000",
     period: "/month",
     description:
-      "Engineered automation systems — not configured tools. Custom-built AI that qualifies leads, engages customers, and operates autonomously 24/7.",
+      "We start by understanding your business inside and out. Then we build your first custom AI systems — branded as yours, engineered to your specifications, and designed for long-term growth.",
     features: [
       "Custom AI chatbot or voice agent",
       "Lead qualification automation",
@@ -36,7 +36,7 @@ const tiers = [
     priceMax: "$10,000",
     period: "/month",
     description:
-      "Complete digital ecosystem engineering — custom web applications, autonomous content pipelines, and full AEO/GEO/SEO visibility systems built to compound.",
+      "Complete digital ecosystem engineering, tailored to your business. We build and integrate multiple systems that work together autonomously — every component white-labeled, every workflow custom-designed around how you actually operate.",
     features: [
       "Everything in AI Automation",
       "Custom web application or e-commerce store",
@@ -57,7 +57,7 @@ const tiers = [
     priceMax: "$25,000",
     period: "/month",
     description:
-      "End-to-end AI transformation with custom agent development, video production pipelines, and complete marketing automation — infrastructure that becomes more valuable over time.",
+      "Full-scale AI transformation with dedicated engineering resources. We embed with your team, architect enterprise-grade systems from scratch, and deliver infrastructure that becomes your competitive moat — not a vendor dependency.",
     features: [
       "Everything in Digital Infrastructure",
       "Custom AI agent development",
@@ -67,7 +67,7 @@ const tiers = [
       "Weekly strategy sessions",
       "24/7 priority support",
       "Quarterly business reviews",
-      "White-label solutions available",
+      "Fully white-labeled under your brand",
     ],
     cta: "Contact Us",
     highlighted: false,

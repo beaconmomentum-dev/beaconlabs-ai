@@ -108,9 +108,9 @@ export default function Services() {
               className="text-[oklch(0.65_0.03_185)] mt-3 max-w-xl text-lg"
             >
               The skills behind these systems command $500K/year on the open market.
-              Most agencies configure tools and resell them. We engineer custom systems
-              from the ground up — tailored to your business, built to scale, and
-              impossible to clone.
+              We don't resell platforms or hand you a login. We sit down with you,
+              map what your business actually needs, and engineer it from scratch —
+              white-labeled under your brand, built to scale, and impossible to clone.
             </motion.p>
           </div>
         </div>

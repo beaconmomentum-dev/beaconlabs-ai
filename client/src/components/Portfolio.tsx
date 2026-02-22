@@ -20,13 +20,13 @@ const caseStudies = [
     category: "E-Commerce + AI Automation",
     title: "Full-Stack E-Commerce with Automated Content Pipeline",
     description:
-      "Built two complete e-commerce brands from zero — custom Shopify-alternative storefronts, Printful integration, Stripe payments, and an AI content pipeline that generates product descriptions, social posts, and video ads autonomously.",
+      "Built two complete e-commerce brands from zero — custom Shopify-alternative storefronts, automated fulfillment, integrated payments, and an AI content pipeline that generates product descriptions, social posts, and video ads autonomously. Every system is white-labeled under the client's brand.",
     results: [
       { metric: "17+", label: "Daily automated posts" },
       { metric: "7", label: "Social platforms" },
       { metric: "0", label: "Manual content creation" },
     ],
-    tags: ["React", "Node.js", "Printful API", "Stripe", "AI Content Gen", "TikTok Shop"],
+    tags: ["Custom Storefronts", "Automated Fulfillment", "Payment Systems", "AI Content Gen", "Social Commerce", "Video Ads"],
   },
   {
     image: COMMUNITY_IMG,
@@ -35,13 +35,13 @@ const caseStudies = [
     category: "Community Platform + AI Agents",
     title: "AI-Powered Community Ecosystem with Autonomous Mentorship",
     description:
-      "Engineered a complete community platform with AI mentor agents (Bosun), automated onboarding flows, Discord integration, video lesson generation via HeyGen avatars, and a custom CRM built on GoHighLevel. The system runs autonomously with minimal human oversight.",
+      "Engineered a complete community platform with AI mentor agents, automated onboarding flows, integrated community channels, AI-generated video lessons with custom avatars, and a purpose-built CRM. Every touchpoint carries the client's brand — the infrastructure is invisible.",
     results: [
       { metric: "24/7", label: "AI mentor availability" },
       { metric: "50+", label: "Auto-generated lessons" },
       { metric: "3", label: "Integrated platforms" },
     ],
-    tags: ["GoHighLevel", "Discord Bot", "HeyGen", "ElevenLabs", "Custom CRM", "AI Agents"],
+    tags: ["AI Mentor Agents", "Community Platform", "Video Production", "Voice Synthesis", "Custom CRM", "Automation"],
   },
 ];
 

@@ -11,8 +11,8 @@ import { X, Check, ArrowRight, Quote } from "lucide-react";
 
 const comparisons = [
   {
-    typical: "Configures off-the-shelf tools (GoHighLevel, Zapier, etc.)",
-    beacon: "Engineers custom AI systems built on top of — and beyond — these platforms",
+    typical: "Configures off-the-shelf tools and resells platform subscriptions",
+    beacon: "Engineers custom AI systems, white-labeled under your brand — you see the results, never the tools",
   },
   {
     typical: "Sells $297/mo AI chatbots that get cloned on Fiverr",
@@ -77,7 +77,7 @@ export default function WhyBeacon() {
           >
             Most AI agencies configure tools and sell monthly retainers.
             When those tools become native or get undercut on price, their value disappears.
-            We engineer systems that compound.
+            We sit down, figure out exactly what you need, and engineer it — white-labeled, bespoke, and built to compound.
           </motion.p>
         </div>
 
@@ -92,7 +92,7 @@ export default function WhyBeacon() {
             <Quote size={24} className="text-[oklch(0.75_0.14_85/0.3)] absolute top-4 left-4" />
             <p className="font-serif text-lg md:text-xl text-[oklch(0.25_0.03_240)] leading-relaxed pl-8 md:pl-10">
               "What happens when someone offers the same AI agent for half the price?
-              What happens when it becomes native inside GoHighLevel?
+              What happens when it becomes a native feature inside the platform you're reselling?
               What happens when it gets cloned on Fiverr?"
             </p>
             <p className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-[oklch(0.50_0.02_240)] mt-4 pl-8 md:pl-10">
