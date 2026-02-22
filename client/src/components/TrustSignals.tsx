@@ -10,8 +10,8 @@ import { useRef } from "react";
 const signals = [
   { metric: "6", label: "Brands Built & Operated", suffix: "" },
   { metric: "50", label: "AI Systems Deployed", suffix: "+" },
+  { metric: "40", label: "Of Consumers Now Use AI Search", suffix: "%" },
   { metric: "17", label: "Daily Automated Posts", suffix: "+" },
-  { metric: "3", label: "DigitalOcean Servers", suffix: "" },
   { metric: "24", label: "Hour Response Time", suffix: "hr" },
 ];
 

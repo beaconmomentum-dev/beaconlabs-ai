@@ -12,16 +12,16 @@ const tiers = [
   {
     name: "AI Automation",
     tag: "Foundation",
-    price: "$1,500",
-    priceMax: "$3,000",
+    price: "$2,500",
+    priceMax: "$5,000",
     period: "/month",
     description:
-      "Deploy intelligent automation systems that handle your repetitive tasks, qualify leads, and engage customers around the clock.",
+      "Engineered automation systems — not configured tools. Custom-built AI that qualifies leads, engages customers, and operates autonomously 24/7.",
     features: [
-      "AI chatbot or voice agent",
+      "Custom AI chatbot or voice agent",
       "Lead qualification automation",
       "Review management system",
-      "CRM automation (GoHighLevel)",
+      "CRM automation & integration",
       "Appointment scheduling",
       "Monthly performance reports",
       "Email & chat support",
@@ -32,11 +32,11 @@ const tiers = [
   {
     name: "Digital Infrastructure",
     tag: "Most Popular",
-    price: "$3,000",
-    priceMax: "$7,500",
+    price: "$5,000",
+    priceMax: "$10,000",
     period: "/month",
     description:
-      "Complete digital ecosystem build — from custom web applications to automated content pipelines and AI-powered marketing.",
+      "Complete digital ecosystem engineering — custom web applications, autonomous content pipelines, and full AEO/GEO/SEO visibility systems built to compound.",
     features: [
       "Everything in AI Automation",
       "Custom web application or e-commerce store",
@@ -52,12 +52,12 @@ const tiers = [
   },
   {
     name: "Enterprise AI",
-    tag: "Full Service",
-    price: "$7,500",
-    priceMax: "$15,000",
+    tag: "Full Transformation",
+    price: "$10,000",
+    priceMax: "$25,000",
     period: "/month",
     description:
-      "End-to-end AI transformation. Custom agent development, video production, and complete marketing automation for ambitious businesses.",
+      "End-to-end AI transformation with custom agent development, video production pipelines, and complete marketing automation — infrastructure that becomes more valuable over time.",
     features: [
       "Everything in Digital Infrastructure",
       "Custom AI agent development",
@@ -101,7 +101,7 @@ export default function Pricing() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-serif text-3xl md:text-[2.75rem] leading-tight text-[oklch(0.16_0.03_240)]"
           >
-            Transparent Pricing, Real Results
+            Engineered Solutions, Not Software Subscriptions
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
@@ -109,9 +109,10 @@ export default function Pricing() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-[oklch(0.45_0.03_240)] mt-3 max-w-2xl mx-auto text-lg"
           >
-            No hidden fees. No $297/month tools repackaged as consulting.
-            Every engagement starts with a discovery call where we scope real deliverables
-            and agree on pricing before any commitment.
+            Other agencies charge $2,500–$5,000/month just to monitor your AI search
+            visibility. We engineer the systems that create it. The expertise behind our
+            work commands $500K/year on the open market — you get it deployed as
+            infrastructure that compounds.
           </motion.p>
         </div>
 
@@ -208,7 +209,8 @@ export default function Pricing() {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="text-center font-mono text-xs text-[oklch(0.50_0.02_240)] mt-10"
         >
-          All plans include a one-time setup fee based on project scope. Custom enterprise packages available.
+          All plans include a one-time engineering & build phase scoped during discovery.
+          You're investing in infrastructure, not subscribing to software.
         </motion.p>
       </div>
     </section>

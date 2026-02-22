@@ -11,7 +11,7 @@ const HERO_IMG = "https://private-us-east-1.manuscdn.com/sessionFile/tKxNRtyvM8Z
 
 const stats = [
   { icon: Cpu, value: "50+", label: "AI Systems Deployed" },
-  { icon: Zap, value: "10x", label: "Efficiency Gains" },
+  { icon: Zap, value: "$500K", label: "Skill-Set Market Value" },
   { icon: Globe, value: "6", label: "Brands Built" },
 ];
 
@@ -60,9 +60,9 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-lg md:text-xl text-[oklch(0.40_0.03_240)] leading-relaxed max-w-lg mb-10"
             >
-              Beacon Labs builds custom AI automation systems, intelligent agents, and
-              digital infrastructure that transform how businesses operate. No templates.
-              No resold tools. From blueprint to production.
+              The AI skills behind our systems are valued at $500K/year on the open
+              market. Your competitors are already investing. We deploy that expertise
+              as engineered infrastructure — built for your business, impossible to replicate.
             </motion.p>
 
             {/* CTAs */}
@@ -76,7 +76,7 @@ export default function Hero() {
                 href="#contact"
                 className="group inline-flex items-center gap-2 font-mono text-sm tracking-[0.05em] uppercase px-7 py-3.5 bg-[oklch(0.40_0.08_185)] text-[oklch(0.97_0.005_80)] rounded-sm hover:bg-[oklch(0.35_0.07_185)] transition-all duration-300 hover:shadow-[0_0_30px_oklch(0.45_0.09_185/0.3)]"
               >
-                Book a Discovery Call
+                Book a Discovery Call — Before Your Competitors Do
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </a>
               <a

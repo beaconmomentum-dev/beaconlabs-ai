@@ -156,9 +156,9 @@ export default function VideoExplainer() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="font-serif text-2xl md:text-3xl leading-tight text-[oklch(0.95_0.005_80)] mb-3"
             >
-              Your Customers Are Asking AI
+              Your Competitors Are Already Investing
               <br />
-              <span className="text-[oklch(0.75_0.14_85)]">— Are You the Answer?</span>
+              <span className="text-[oklch(0.75_0.14_85)]">— Where Does That Leave You?</span>
             </motion.h2>
 
             <motion.p
@@ -167,9 +167,10 @@ export default function VideoExplainer() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-[oklch(0.65_0.03_185)] mb-8 leading-relaxed"
             >
-              Watch Bob explain why AI search visibility is the most important
-              thing most business owners have never heard of — and what you can
-              do about it right now.
+              The expertise behind AI search visibility commands $500K/year
+              on the open market. Watch Bob explain why businesses that move now
+              will own the AI search landscape — and why waiting is the most
+              expensive decision you can make.
             </motion.p>
 
             <div className="space-y-5 mb-8">
@@ -206,14 +207,14 @@ export default function VideoExplainer() {
                 href="#contact"
                 className="group inline-flex items-center gap-2 font-mono text-xs tracking-[0.1em] uppercase px-6 py-3 bg-[oklch(0.75_0.14_85)] text-[oklch(0.16_0.03_240)] rounded-sm hover:bg-[oklch(0.80_0.13_85)] transition-all duration-300 hover:shadow-[0_0_25px_oklch(0.75_0.14_85/0.3)]"
               >
-                Get Your Free AI Visibility Audit
+                Claim Your Free AI Visibility Audit
                 <ArrowRight
                   size={14}
                   className="transition-transform group-hover:translate-x-1"
                 />
               </a>
               <p className="font-mono text-[0.6rem] tracking-[0.1em] text-[oklch(0.45_0.03_185)] mt-3">
-                No commitment. We'll show you exactly where you stand.
+                See where you rank before your competitors pull ahead.
               </p>
             </motion.div>
           </div>

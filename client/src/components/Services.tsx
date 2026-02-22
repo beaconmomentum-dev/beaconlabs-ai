@@ -107,9 +107,10 @@ export default function Services() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-[oklch(0.65_0.03_185)] mt-3 max-w-xl text-lg"
             >
-              Most agencies configure tools and resell them as services.
-              We engineer custom systems from the ground up — tailored to your business,
-              built to scale, and impossible to clone.
+              The skills behind these systems command $500K/year on the open market.
+              Most agencies configure tools and resell them. We engineer custom systems
+              from the ground up — tailored to your business, built to scale, and
+              impossible to clone.
             </motion.p>
           </div>
         </div>
@@ -136,7 +137,7 @@ export default function Services() {
                   Differentiator
                 </div>
                 <p className="text-sm text-[oklch(0.85_0.005_80)]">
-                  We build the AI systems other agencies buy off the shelf.
+                  We've been engineering AEO since before the market had a name for it.
                   When tools become native or get undercut, our systems still stand.
                 </p>
               </div>
