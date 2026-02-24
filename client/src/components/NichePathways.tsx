@@ -13,7 +13,7 @@ const pathways = [
     icon: ShoppingCart,
     title: "E-Commerce & DTC Brands",
     description:
-      "AI-managed Meta campaigns that optimize in real-time. Lower your CPA, scale your winners, and get placed inside AI search results — all automatically.",
+      "We help you build a resilient, data-driven brand that customers love and return to. Lower your CPA, scale your winners, and build a predictable growth engine — so you can focus on creating.",
     href: "/ecommerce",
     cta: "See E-Commerce Solutions",
     accentBg: "bg-[oklch(0.45_0.09_185/0.08)]",
@@ -26,7 +26,7 @@ const pathways = [
     icon: BookOpen,
     title: "Coaches & Consultants",
     description:
-      "Fill your calendar with qualified prospects. AI-powered lead generation, authority positioning in AI search, and automated nurture sequences that book calls.",
+      "We help you cut through the noise and build a client acquisition system that is both predictable and authentic. Our systems find and connect you with the people who need your expertise the most.",
     href: "/coaches",
     cta: "See Coaching Solutions",
     accentBg: "bg-[oklch(0.75_0.14_85/0.06)]",
@@ -39,7 +39,7 @@ const pathways = [
     icon: Building2,
     title: "Other Industries",
     description:
-      "Our AI advertising and infrastructure systems work across industries. If you're running ads and want to know how to improve them, let's talk.",
+      "Our principles of building robust, data-driven systems apply across industries. If you believe your business could be more efficient and visible, let's have a conversation.",
     href: "/audit",
     cta: "Get a Free Audit",
     accentBg: "bg-[oklch(0.55_0.10_280/0.05)]",
@@ -85,8 +85,8 @@ export default function NichePathways() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-[oklch(0.45_0.03_240)] mt-3 max-w-2xl mx-auto text-lg"
           >
-            Every business is different. We've built specialized solutions for the
-            industries where AI advertising delivers the highest impact.
+            Every business is different. We act as your guide, building specialized
+            solutions for the industries where AI delivers the highest impact.
           </motion.p>
         </div>
 

@@ -22,21 +22,21 @@ import Footer from "@/components/Footer";
 const painPoints = [
   {
     icon: Users,
-    title: "Leads That Never Convert",
+    title: "Attracting the Right Clients",
     description:
-      "You're getting clicks and opt-ins, but they're the wrong people. Your funnel is attracting tire-kickers instead of clients ready to invest $3K–$25K in transformation.",
+      "The challenge isn't getting attention — it's getting the right attention. We help you build systems that attract clients who are genuinely ready for transformation, not just browsing.",
   },
   {
     icon: Calendar,
-    title: "Feast or Famine Revenue",
+    title: "Predictable, Sustainable Growth",
     description:
-      "One month your calendar is full, the next it's empty. Without a predictable, automated lead generation system, your income depends entirely on your last launch.",
+      "Your income shouldn't depend on your last launch. We build automated lead generation systems that create a steady, predictable flow of qualified prospects month after month.",
   },
   {
     icon: Target,
-    title: "Invisible to AI Search",
+    title: "Being Found by AI",
     description:
-      "When someone asks ChatGPT or Gemini for a coach in your niche, your name doesn't come up. Your competitors who invested in AI visibility are getting those referrals instead.",
+      "When someone asks ChatGPT or Gemini for a coach in your niche, will your name come up? We make sure it does — positioning you as the authority AI recommends.",
   },
 ];
 
@@ -121,9 +121,9 @@ export default function Coaches() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="font-serif text-[2.5rem] md:text-[3.25rem] lg:text-[3.75rem] leading-[1.08] tracking-tight text-[oklch(0.16_0.03_240)] mb-6"
             >
-              Stop Chasing Clients.
+              You've Already Changed Lives.
               <br />
-              <span className="text-[oklch(0.75_0.14_85)]">Let Them Find You.</span>
+              <span className="text-[oklch(0.75_0.14_85)]">Let's Reach More of Them.</span>
             </motion.h1>
 
             <motion.p
@@ -133,9 +133,8 @@ export default function Coaches() {
               className="text-lg md:text-xl text-[oklch(0.40_0.03_240)] leading-relaxed max-w-2xl mb-10"
             >
               Your expertise changes lives — but only if the right people can find you.
-              We build AI-powered advertising and visibility systems that put you in front
-              of qualified prospects who are actively searching for what you offer. Predictable
-              leads, predictable revenue, predictable growth.
+              We build AI-powered systems that connect you with the clients who need your
+              guidance the most. Not more noise. More of the right conversations.
             </motion.p>
 
             <motion.div
@@ -213,7 +212,7 @@ export default function Coaches() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-serif text-3xl md:text-[2.75rem] leading-tight text-[oklch(0.16_0.03_240)]"
             >
-              Talent Alone Doesn't Fill Your Calendar
+              Challenges We Help You Solve
             </motion.h2>
           </div>
 
@@ -431,14 +430,14 @@ export default function Coaches() {
               <div className="w-8 h-px bg-[oklch(0.75_0.14_85)]" />
             </div>
             <h2 className="font-serif text-3xl md:text-[2.75rem] leading-tight text-[oklch(0.95_0.005_80)] mb-4">
-              Free Audit: See Exactly Where Your
+              Let's Find Out What's Possible
               <br />
-              <span className="text-[oklch(0.75_0.14_85)]">Ad Budget Is Leaking</span>
+              <span className="text-[oklch(0.75_0.14_85)]">For Your Practice</span>
             </h2>
             <p className="text-[oklch(0.60_0.02_185)] max-w-2xl mx-auto text-lg mb-8">
-              We'll analyze your current Meta ad performance, show you what your
-              competitors are doing differently, and give you a clear action plan to
-              generate more qualified leads at a lower cost — delivered in under 24 hours.
+              We'll analyze your current advertising, show you where the opportunities
+              are, and give you a clear path forward — delivered to your inbox in under
+              24 hours. No obligation, no pressure. Just clarity.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -465,7 +464,7 @@ export default function Coaches() {
             </a>
 
             <p className="font-mono text-xs text-[oklch(0.50_0.02_185)] mt-6">
-              Limited to 10 free audits per week to ensure quality. No obligation. No credit card.
+              No obligation. No credit card. Just honest guidance.
             </p>
           </motion.div>
         </div>

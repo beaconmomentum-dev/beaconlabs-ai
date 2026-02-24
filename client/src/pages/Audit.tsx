@@ -476,9 +476,10 @@ export default function Audit() {
               Don't See Your Industry?
             </h2>
             <p className="text-[oklch(0.40_0.03_240)] max-w-xl mx-auto mb-6">
-              Our AI advertising systems work across industries. If you're running
-              Meta ads and want to know how to improve them, we'd love to hear from you.
-              Fill out the audit form above and select "Other" — we'll take it from there.
+              Our principles of building robust, data-driven systems apply across
+              industries. If you believe your advertising could be working harder for you,
+              we'd love to have a conversation. Fill out the audit form above and select
+              "Other" — we'll take it from there.
             </p>
             <a
               href="#contact"

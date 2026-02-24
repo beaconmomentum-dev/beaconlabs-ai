@@ -310,7 +310,7 @@ export default function Pricing() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-serif text-3xl md:text-[2.75rem] leading-tight text-[oklch(0.16_0.03_240)]"
           >
-            Results-Driven, Not Retainer-Trapped
+            Transparent Investment, Real Results
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
@@ -319,7 +319,8 @@ export default function Pricing() {
             className="text-[oklch(0.45_0.03_240)] mt-3 max-w-2xl mx-auto text-lg"
           >
             Two ways to work with us. Build the infrastructure that powers your business,
-            or let our AI run your advertising. Most clients start with one and add the other.
+            or let our AI manage your advertising. We believe in proving our value first —
+            most clients start with one and add the other.
           </motion.p>
         </div>
 

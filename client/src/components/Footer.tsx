@@ -38,13 +38,13 @@ export default function Footer() {
                   Beacon Labs
                 </span>
                 <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase text-[oklch(0.45_0.09_185)] -mt-0.5">
-                  Building Infrastructure for Impact
+                  Guiding the Way Forward
                 </div>
               </div>
             </a>
             <p className="text-sm leading-relaxed max-w-xs mt-4">
-              We engineer custom AI systems, automation infrastructure, and digital
-              ecosystems for businesses ready to scale.
+              We build the AI-powered infrastructure that makes your business
+              the confident answer. Deliver results. Stand behind your word. Earn the relationship.
             </p>
           </div>
 
@@ -90,7 +90,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Beacon Labs. All rights reserved.
           </span>
           <span className="font-mono text-[0.6rem] tracking-[0.1em] text-[oklch(0.40_0.02_240)]">
-            Engineered from scratch. Never resold. Always custom.
+            Guiding the Way Forward. Always.
           </span>
         </div>
       </div>

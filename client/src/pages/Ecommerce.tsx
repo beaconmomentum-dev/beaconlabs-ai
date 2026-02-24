@@ -27,19 +27,19 @@ const painPoints = [
     icon: DollarSign,
     title: "Rising Ad Costs, Shrinking Margins",
     description:
-      "Your CPA keeps climbing while your agency sends you the same recycled reports. You need systems that actually optimize — not people who just monitor dashboards.",
+      "The problem isn't your product — it's the system behind it. When campaigns are managed manually, costs creep up. AI-driven optimization keeps your CPA in check and your margins healthy.",
   },
   {
     icon: Target,
-    title: "Targeting That Misses the Mark",
+    title: "Reaching the Right People",
     description:
-      "Broad audiences, wasted impressions, and creative fatigue. Your ads are running, but they're not working. AI-driven targeting finds buyers your current setup is missing.",
+      "Broad audiences and creative fatigue waste budget. Our AI-driven targeting finds the buyers your current setup is missing — and connects them with the products they're already looking for.",
   },
   {
     icon: BarChart3,
-    title: "No Visibility Into What's Actually Working",
+    title: "Clarity on Every Dollar",
     description:
-      "You're spending $10K, $20K, $50K+ per month but can't pinpoint which creative, audience, or placement is driving real revenue. We fix that.",
+      "You deserve to know exactly which creative, audience, and placement is driving real revenue. We build the reporting infrastructure that gives you that clarity.",
   },
 ];
 
@@ -124,9 +124,9 @@ export default function Ecommerce() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="font-serif text-[2.5rem] md:text-[3.25rem] lg:text-[3.75rem] leading-[1.08] tracking-tight text-[oklch(0.16_0.03_240)] mb-6"
             >
-              You're Spending Money on Ads.
+              Your Brand Deserves
               <br />
-              <span className="text-[oklch(0.75_0.14_85)]">Are You Wasting It?</span>
+              <span className="text-[oklch(0.75_0.14_85)]">Better Than Guesswork</span>
             </motion.h1>
 
             <motion.p
@@ -135,10 +135,9 @@ export default function Ecommerce() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-lg md:text-xl text-[oklch(0.40_0.03_240)] leading-relaxed max-w-2xl mb-10"
             >
-              Most DTC brands are bleeding ad spend because their campaigns are managed
-              by people, not systems. We connect AI directly to your Meta ad account —
-              it analyzes, optimizes, and scales automatically. No more guessing. No more
-              wasted budget.
+              You built something worth buying. We build the systems that make sure
+              the right people find it. AI-powered advertising that optimizes in real-time,
+              scales what works, and gives you clarity on every dollar spent.
             </motion.p>
 
             <motion.div
@@ -217,7 +216,7 @@ export default function Ecommerce() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-serif text-3xl md:text-[2.75rem] leading-tight text-[oklch(0.16_0.03_240)]"
             >
-              Your Agency Is Costing You More Than You Think
+              Common Challenges We Solve
             </motion.h2>
           </div>
 
@@ -278,7 +277,7 @@ export default function Ecommerce() {
               className="text-[oklch(0.65_0.03_185)] mt-3 max-w-2xl text-lg"
             >
               AI that manages your campaigns <em>and</em> places your brand inside AI
-              responses. Your competitors are choosing one or the other. We deliver both.
+              responses. Most businesses choose one or the other. We help you build both.
             </motion.p>
           </div>
 
@@ -438,14 +437,14 @@ export default function Ecommerce() {
               <div className="w-8 h-px bg-[oklch(0.75_0.14_85)]" />
             </div>
             <h2 className="font-serif text-3xl md:text-[2.75rem] leading-tight text-[oklch(0.95_0.005_80)] mb-4">
-              Your Competitors' Ads Are Outperforming Yours.
+              Ready to See What's Possible?
               <br />
-              <span className="text-[oklch(0.75_0.14_85)]">Here's Why.</span>
+              <span className="text-[oklch(0.75_0.14_85)]">Start With Clarity.</span>
             </h2>
             <p className="text-[oklch(0.60_0.02_185)] max-w-2xl mx-auto text-lg mb-8">
               Get a free, AI-generated audit of your Meta ad performance. We'll show you
-              exactly where your budget is leaking, what your competitors are doing
-              differently, and how to fix it — in under 24 hours.
+              exactly where opportunities exist, what's working, what isn't, and a clear
+              path forward — delivered to your inbox in under 24 hours.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -472,7 +471,7 @@ export default function Ecommerce() {
             </a>
 
             <p className="font-mono text-xs text-[oklch(0.50_0.02_185)] mt-6">
-              Limited to 10 free audits per week to ensure quality. No obligation. No credit card.
+              No obligation. No credit card. Just honest guidance.
             </p>
           </motion.div>
         </div>

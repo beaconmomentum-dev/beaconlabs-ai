@@ -160,14 +160,14 @@ export default function WhyBeacon() {
           <p className="text-sm text-[oklch(0.45_0.03_240)] leading-relaxed mb-6">
             Other agencies teach how to reframe a $297/month AI tool into a $3,000 consulting engagement.
             We don't need to reframe — our engineering starts where their consulting ends.
-            You're not paying for configuration. You're investing in $500K-level expertise,
-            deployed as infrastructure that compounds while your competitors are still shopping for tools.
+            You're not paying for configuration. You're investing in real infrastructure,
+            built by a team with 40 years of operational experience, that compounds while others are still shopping for tools.
           </p>
           <a
             href="#contact"
             className="group inline-flex items-center gap-2 font-mono text-sm tracking-[0.05em] uppercase px-7 py-3.5 bg-[oklch(0.40_0.08_185)] text-[oklch(0.97_0.005_80)] rounded-sm hover:bg-[oklch(0.35_0.07_185)] transition-all duration-300 hover:shadow-[0_0_30px_oklch(0.45_0.09_185/0.3)]"
           >
-            Talk to Us Before Your Competitors Do
+            Let's Build Something That Lasts
             <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
           </a>
         </motion.div>

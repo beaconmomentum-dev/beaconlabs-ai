@@ -11,7 +11,7 @@ const HERO_IMG = "https://private-us-east-1.manuscdn.com/sessionFile/tKxNRtyvM8Z
 
 const stats = [
   { icon: Cpu, value: "50+", label: "AI Systems Deployed" },
-  { icon: Zap, value: "$500K", label: "Skill-Set Market Value" },
+  { icon: Zap, value: "40+", label: "Years of Operations" },
   { icon: Globe, value: "6", label: "Brands Built" },
 ];
 
@@ -34,7 +34,7 @@ export default function Hero() {
               className="flex items-center gap-3 mb-8"
             >
               <div className="w-12 h-px bg-[oklch(0.75_0.14_85)]" />
-              <span className="section-label">B2B AI Infrastructure Engineering</span>
+              <span className="section-label">AI Infrastructure Engineering</span>
             </motion.div>
 
             <motion.h1
@@ -43,15 +43,15 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="font-serif text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] leading-[1.05] tracking-tight text-[oklch(0.16_0.03_240)] mb-6"
             >
-              We Don't Just Use{" "}
+              Guiding The{" "}
               <span className="relative inline-block">
-                <span className="text-[oklch(0.40_0.08_185)]">AI Tools</span>
+                <span className="text-[oklch(0.40_0.08_185)]">Way</span>
                 <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 200 8" fill="none">
                   <path d="M0 6 Q50 0 100 4 Q150 8 200 2" stroke="oklch(0.75 0.14 85)" strokeWidth="2" fill="none" />
                 </svg>
               </span>
               <br />
-              We <em className="text-[oklch(0.75_0.14_85)] not-italic">Engineer</em> Them
+              <em className="text-[oklch(0.75_0.14_85)] not-italic">Forward</em>
             </motion.h1>
 
             <motion.p
@@ -60,9 +60,9 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-lg md:text-xl text-[oklch(0.40_0.03_240)] leading-relaxed max-w-lg mb-10"
             >
-              The AI skills behind our systems are valued at $500K/year on the open
-              market. Your competitors are already investing. We deploy that expertise
-              as engineered infrastructure — built for your business, impossible to replicate.
+              People aren't just searching anymore — they're asking, and AI is answering.
+              We build the AI-powered infrastructure that makes your business the confident
+              answer. 40 years of operations. Navy discipline. Technology that works.
             </motion.p>
 
             {/* CTAs */}
@@ -76,14 +76,14 @@ export default function Hero() {
                 href="#contact"
                 className="group inline-flex items-center gap-2 font-mono text-sm tracking-[0.05em] uppercase px-7 py-3.5 bg-[oklch(0.40_0.08_185)] text-[oklch(0.97_0.005_80)] rounded-sm hover:bg-[oklch(0.35_0.07_185)] transition-all duration-300 hover:shadow-[0_0_30px_oklch(0.45_0.09_185/0.3)]"
               >
-                Book a Discovery Call — Before Your Competitors Do
+                Book a Discovery Call
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </a>
               <a
                 href="#portfolio"
                 className="inline-flex items-center gap-2 font-mono text-sm tracking-[0.05em] uppercase px-7 py-3.5 border border-[oklch(0.45_0.09_185/0.3)] text-[oklch(0.35_0.07_185)] rounded-sm hover:border-[oklch(0.45_0.09_185/0.6)] hover:bg-[oklch(0.45_0.09_185/0.05)] transition-all duration-300"
               >
-                View Our Work
+                See Our Philosophy
               </a>
             </motion.div>
 

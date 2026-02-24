@@ -107,10 +107,10 @@ export default function Services() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-[oklch(0.65_0.03_185)] mt-3 max-w-xl text-lg"
             >
-              The skills behind these systems command $500K/year on the open market.
               We don't resell platforms or hand you a login. We sit down with you,
-              map what your business actually needs, and engineer it from scratch —
-              white-labeled under your brand, built to scale, and impossible to clone.
+              map what your business actually needs, and engineer it from the ground up.
+              We build the operational backbone that lets you focus on your work —
+              not wrestling with technology.
             </motion.p>
           </div>
         </div>

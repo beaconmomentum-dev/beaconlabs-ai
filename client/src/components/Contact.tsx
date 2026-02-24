@@ -101,9 +101,9 @@ export default function Contact() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-serif text-3xl md:text-[2.5rem] leading-tight text-[oklch(0.95_0.005_80)] mb-4"
             >
-              The Window Is Open
+              Let's Have a
               <br />
-              <span className="text-[oklch(0.75_0.14_85)]">But It Won't Stay Open</span>
+              <span className="text-[oklch(0.75_0.14_85)]">Conversation</span>
             </motion.h2>
 
             <motion.p
@@ -112,10 +112,10 @@ export default function Contact() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-[oklch(0.60_0.02_185)] leading-relaxed mb-10"
             >
-              Every project starts with a 30-minute discovery call. We'll audit your
-              AI visibility, show you where your competitors stand, and outline a clear
-              path forward — no obligation, no sales pitch. The businesses that move
-              now will own the AI search landscape by 2027.
+              Every project starts with a conversation. We'll listen to your goals,
+              audit your AI visibility, and outline a clear path forward — no obligation,
+              no sales pitch. Just honest guidance from a team that's been building
+              operational systems for over 40 years.
             </motion.p>
 
             {/* Contact info */}
