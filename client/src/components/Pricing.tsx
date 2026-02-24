@@ -95,13 +95,13 @@ const infrastructureTiers: Tier[] = [
 const advertisingTiers: Tier[] = [
   {
     name: "Ad Launch",
-    tag: "Get Started",
-    price: "$997",
-    priceMax: "$1,497",
+    tag: "Foundation",
+    price: "$1,500",
+    priceMax: "$2,500",
     period: "/month",
-    setupFee: "$1,500 one-time setup",
+    setupFee: "$3,000 one-time setup",
     description:
-      "AI-powered Meta advertising for businesses ready to stop guessing and start scaling. We connect directly to the Meta Ads ecosystem, audit your competitive landscape, and launch campaigns engineered for measurable results.",
+      "AI-powered Meta advertising for businesses ready to stop guessing and start scaling. We connect directly to the Meta Ads ecosystem, audit your competitive landscape, and launch campaigns engineered for measurable results. Your setup fee covers a full competitive audit, campaign architecture, and pixel infrastructure — built before your first dollar is spent on ads.",
     features: [
       "Free Meta Ads audit (before you pay a dime)",
       "AI-managed Facebook & Instagram campaigns",
@@ -109,7 +109,7 @@ const advertisingTiers: Tier[] = [
       "Creative direction (ad copy + visual guidance)",
       "Pixel & conversion tracking setup",
       "Bi-weekly performance reports",
-      "Up to $5,000/mo managed ad spend",
+      "Up to $10,000/mo managed ad spend",
       "Email support",
     ],
     cta: "Get Your Free Audit",
@@ -119,12 +119,12 @@ const advertisingTiers: Tier[] = [
   {
     name: "Ad Accelerator",
     tag: "Most Popular",
-    price: "$1,997",
-    priceMax: "$2,497",
+    price: "$3,000",
+    priceMax: "$4,500",
     period: "/month",
-    setupFee: "$2,500 one-time setup",
+    setupFee: "$5,000 one-time setup",
     description:
-      "Full-spectrum AI advertising across Meta platforms with competitive intelligence, creative production, and continuous optimization. Built for e-commerce brands and service businesses scaling past $10K/mo in ad spend.",
+      "Full-spectrum AI advertising across Meta platforms with competitive intelligence, creative production, and continuous optimization. Built for e-commerce brands and service businesses scaling past $10K/mo in ad spend. Your setup includes full funnel architecture, retargeting infrastructure, and a competitive intelligence report on your top 5 competitors.",
     features: [
       "Everything in Ad Launch",
       "AI competitive intelligence (audit your competitors' ads)",
@@ -133,7 +133,7 @@ const advertisingTiers: Tier[] = [
       "A/B testing & creative rotation",
       "Retargeting & lookalike audience buildout",
       "Weekly optimization & strategy calls",
-      "Up to $25,000/mo managed ad spend",
+      "Up to $50,000/mo managed ad spend",
       "Slack channel support",
     ],
     cta: "Book a Strategy Call",
@@ -143,12 +143,12 @@ const advertisingTiers: Tier[] = [
   {
     name: "Ad Domination",
     tag: "Maximum Scale",
-    price: "$2,997",
-    priceMax: "$4,997",
+    price: "$5,000",
+    priceMax: "$7,500",
     period: "/month",
-    setupFee: "$3,500 one-time setup",
+    setupFee: "$7,500 one-time setup",
     description:
-      "Enterprise-grade AI advertising for brands that demand market leadership. Multi-platform campaign management with AI on both sides of the equation — running your ads and placing you inside AI-generated responses.",
+      "Enterprise-grade AI advertising for brands that demand market leadership. Multi-platform campaign management with AI on both sides of the equation — running your ads and placing you inside AI-generated responses. Your setup includes custom AI agent development, full-funnel CRO audit, and a dedicated strategist from day one.",
     features: [
       "Everything in Ad Accelerator",
       "Full ChatGPT Ads campaign management",
