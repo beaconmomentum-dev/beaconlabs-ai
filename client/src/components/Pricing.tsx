@@ -220,9 +220,16 @@ function TierCard({ tier, index, isInView }: { tier: Tier; index: number; isInVi
           <span className="font-mono text-3xl font-medium text-[oklch(0.16_0.03_240)]">
             {tier.price}
           </span>
-          <span className="font-mono text-lg text-[oklch(0.50_0.02_240)]">
-            –{tier.priceMax}
-          </span>
+          {tier.priceMax && (
+            <span className="font-mono text-lg text-[oklch(0.50_0.02_240)]">
+              –{tier.priceMax}
+            </span>
+          )}
+          {!tier.priceMax && (
+            <span className="font-mono text-lg text-[oklch(0.50_0.02_240)]">
+              +*
+            </span>
+          )}
           <span className="font-mono text-sm text-[oklch(0.50_0.02_240)]">
             {tier.period}
           </span>
@@ -366,7 +373,7 @@ export default function Pricing() {
         >
           {activeTab === "infrastructure"
             ? "All plans include a one-time engineering & build phase scoped during discovery. You're investing in infrastructure, not subscribing to software."
-            : "All advertising plans begin with a free Meta Ads audit. Ad spend is paid directly to the platforms — our fee covers strategy, management, and optimization."}
+            : "*Pricing scales with your managed ad spend — see tier details above for exact breakdowns. All advertising plans begin with a free Meta Ads audit. Ad spend is paid directly to the platforms — our fee covers strategy, management, and optimization."}
         </motion.p>
       </div>
     </section>
