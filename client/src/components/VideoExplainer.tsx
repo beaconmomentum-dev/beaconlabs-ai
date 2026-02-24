@@ -28,9 +28,9 @@ const keyPoints = [
   },
   {
     icon: TrendingUp,
-    title: "40% of Consumers Use AI",
+    title: "39% of Consumers Use AI",
     description:
-      "Nearly half of buyers now research purchases through AI tools. That number doubles every year.",
+      "According to a 2025 Adobe study, 39% of consumers have already used generative AI for online shopping, with 53% planning to do so this year.",
   },
 ];
 
@@ -169,8 +169,7 @@ export default function VideoExplainer() {
             >
               With 40 years of operations and Navy discipline, Bob built Beacon Labs
               on a simple belief: deliver results, stand behind your word, earn the
-              relationship. Watch him explain why AI visibility matters — and how
-              we help you navigate it.
+              relationship. In this video, Bob explains why this shift to AI-powered search is the most important change for businesses today.
             </motion.p>
 
             <div className="space-y-5 mb-8">
