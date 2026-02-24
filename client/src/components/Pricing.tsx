@@ -123,8 +123,11 @@ const advertisingTiers: Tier[] = [
     period: "/month",
     setupFee: "Requires Campaign Build first",
     description:
-      "After your Campaign Build is complete and results are flowing, we stay on to manage, optimize, and scale. AI-powered competitive intelligence, creative production, and weekly strategy calls. This is where the compounding begins — and it only starts after you’ve seen what we can do.",
+      "After your Campaign Build is complete and results are flowing, we stay on to manage, optimize, and scale. You\u2019re not paying for management \u2014 you\u2019re paying for performance. We commit to minimum ROAS and CPA targets, backed by the same AI systems that drove $0.15 CPC and 6.33% CTR across our own brands. If we don\u2019t hit the numbers, we optimize until we do.",
     features: [
+      "\u2705 Minimum 3x ROAS guarantee",
+      "\u2705 CPA cap agreed at onboarding",
+      "\u2705 Monthly performance benchmarks with transparent reporting",
       "Ongoing AI-managed Facebook & Instagram campaigns",
       "AI competitive intelligence (monitor competitors' ads)",
       "5 static + 2 video ad creatives per month",
@@ -132,7 +135,7 @@ const advertisingTiers: Tier[] = [
       "Retargeting & lookalike audience buildout",
       "Weekly optimization & strategy calls",
       "Up to $50,000/mo managed ad spend",
-      "Slack channel support",
+      "30-day out clause if benchmarks aren't met",
     ],
     cta: "Book a Strategy Call",
     ctaLink: "#contact",
@@ -146,8 +149,12 @@ const advertisingTiers: Tier[] = [
     period: "/month",
     setupFee: "Requires Campaign Build first",
     description:
-      "AI on both sides of the equation — managing your campaigns and placing you inside AI-generated responses. Multi-platform advertising across Meta, Google, and ChatGPT Ads with a dedicated strategist, custom AI bid optimization, and full creative production. For brands ready to dominate, not just compete.",
+      "AI on both sides of the equation \u2014 managing your campaigns and placing you inside AI-generated responses. Multi-platform advertising with the strongest performance commitment we offer. We target 4.5x+ ROAS with hard CPA ceilings, weekly benchmarks, and quarterly proof-of-performance reviews. For brands ready to dominate, not just compete.",
     features: [
+      "\u2705 Minimum 4.5x ROAS target",
+      "\u2705 Hard CPA cap + cost-per-lead ceiling",
+      "\u2705 Weekly performance benchmarks",
+      "\u2705 Quarterly ROAS reviews with documented proof",
       "Everything in Growth Retainer",
       "Full ChatGPT Ads campaign management",
       "Multi-platform (Meta + Google + ChatGPT Ads)",
@@ -157,7 +164,6 @@ const advertisingTiers: Tier[] = [
       "Dedicated account strategist",
       "Unlimited managed ad spend",
       "24/7 priority support",
-      "Quarterly business reviews & ROAS reporting",
     ],
     cta: "Contact Us",
     ctaLink: "#contact",
