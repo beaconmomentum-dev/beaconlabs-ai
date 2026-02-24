@@ -128,7 +128,7 @@ const advertisingTiers: Tier[] = [
       "\u2705 CPA cap agreed at onboarding",
       "\u2705 Monthly performance benchmarks with transparent reporting",
       "$1,500/mo \u2014 up to $10,000/mo ad spend",
-      "$2,500/mo \u2014 $10,000\u2013$50,000/mo ad spend",
+      "$2,500/mo \u2014 $10,000\u2013$25,000/mo ad spend",
       "Ongoing AI-managed Facebook & Instagram campaigns",
       "AI competitive intelligence (monitor competitors' ads)",
       "5 static + 2 video ad creatives per month",
