@@ -119,7 +119,7 @@ const advertisingTiers: Tier[] = [
     name: "Growth Retainer",
     tag: "Most Popular",
     price: "$1,500",
-    priceMax: "$3,000",
+    priceMax: "$2,500",
     period: "/month",
     setupFee: "Requires Campaign Build first",
     description:
@@ -144,7 +144,7 @@ const advertisingTiers: Tier[] = [
   {
     name: "Full-Stack Growth",
     tag: "Maximum Scale",
-    price: "$3,000",
+    price: "$3,500",
     priceMax: "$5,000",
     period: "/month",
     setupFee: "Requires Campaign Build first",
