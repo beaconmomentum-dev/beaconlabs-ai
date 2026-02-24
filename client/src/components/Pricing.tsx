@@ -95,12 +95,12 @@ const infrastructureTiers: Tier[] = [
 const advertisingTiers: Tier[] = [
   {
     name: "Campaign Build",
-    tag: "One-Time Project",
+    tag: "Start Here",
     price: "$3,000",
     priceMax: "$5,000",
-    period: " project",
+    period: " one-time",
     description:
-      "We audit your advertising, build your campaigns from scratch, and hand you a system that works. This is the entry point — a one-time project fee that covers everything: competitive audit, campaign architecture, ad creative direction, pixel infrastructure, and launch. You pay once, we deliver results. No surprises, no out-of-pocket risk.",
+      "Every engagement starts here. We audit your advertising, architect your campaigns from scratch, and launch them. This one-time project fee covers everything upfront: competitive audit, campaign architecture, ad creative direction, pixel infrastructure, and launch. You pay, we build, you see results.",
     features: [
       "Free Meta Ads audit (before you pay a dime)",
       "Full competitive analysis (your ads vs. competitors)",
@@ -121,12 +121,11 @@ const advertisingTiers: Tier[] = [
     price: "$1,500",
     priceMax: "$3,000",
     period: "/month",
-    setupFee: "$5,000 campaign build included",
+    setupFee: "Requires Campaign Build first",
     description:
-      "For businesses that want us to stay on and manage everything. Your $5,000 setup covers the full campaign build, then we manage, optimize, and scale your advertising month over month. AI-powered competitive intelligence, creative production, and weekly strategy calls — all included. This is where the compounding begins.",
+      "After your Campaign Build is complete and results are flowing, we stay on to manage, optimize, and scale. AI-powered competitive intelligence, creative production, and weekly strategy calls. This is where the compounding begins — and it only starts after you’ve seen what we can do.",
     features: [
-      "Full campaign build included in setup",
-      "AI-managed Facebook & Instagram campaigns",
+      "Ongoing AI-managed Facebook & Instagram campaigns",
       "AI competitive intelligence (monitor competitors' ads)",
       "5 static + 2 video ad creatives per month",
       "A/B testing & creative rotation",
@@ -145,9 +144,9 @@ const advertisingTiers: Tier[] = [
     price: "$3,000",
     priceMax: "$5,000",
     period: "/month",
-    setupFee: "$7,500 campaign build included",
+    setupFee: "Requires Campaign Build first",
     description:
-      "AI on both sides of the equation — managing your campaigns and placing you inside AI-generated responses. Multi-platform advertising across Meta, Google, and ChatGPT Ads with a dedicated strategist, custom AI bid optimization, and full creative production. Your $7,500 setup covers everything from funnel architecture to landing page CRO.",
+      "AI on both sides of the equation — managing your campaigns and placing you inside AI-generated responses. Multi-platform advertising across Meta, Google, and ChatGPT Ads with a dedicated strategist, custom AI bid optimization, and full creative production. For brands ready to dominate, not just compete.",
     features: [
       "Everything in Growth Retainer",
       "Full ChatGPT Ads campaign management",
