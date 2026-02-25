@@ -5,7 +5,7 @@
  * Includes "Other Industries" path for non-niche visitors.
  */
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useCallback } from "react";
 import {
   ArrowRight,
   Check,
@@ -195,6 +195,45 @@ export default function Audit() {
               ))}
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Video Explainer Section */}
+      <section className="relative bg-[oklch(0.18_0.035_185)] py-16 md:py-20">
+        <div className="absolute inset-0 blueprint-grid-dark opacity-20" />
+        <div className="relative container max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8"
+          >
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="w-8 h-px bg-[oklch(0.75_0.14_85)]" />
+              <span className="section-label text-[oklch(0.75_0.14_85)]">Watch the Overview</span>
+              <div className="w-8 h-px bg-[oklch(0.75_0.14_85)]" />
+            </div>
+            <h2 className="font-serif text-2xl md:text-3xl leading-tight text-[oklch(0.95_0.005_80)]">
+              See How the Beacon Signal Check Works
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative rounded-sm overflow-hidden border border-[oklch(0.45_0.09_185/0.2)] shadow-2xl"
+          >
+            <video
+              controls
+              preload="metadata"
+              poster="https://files.manuscdn.com/user_upload_by_module/session_file/310419663026807979/vVEFXVxWAOxRzRue.jpg"
+              className="w-full aspect-video bg-black"
+            >
+              <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663026807979/JmOTGYDmiIqXRajH.mp4" type="video/mp4" />
+            </video>
+          </motion.div>
         </div>
       </section>
 
