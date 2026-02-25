@@ -149,7 +149,7 @@ export default function Audit() {
               className="flex items-center justify-center gap-3 mb-6"
             >
               <div className="w-8 h-px bg-[oklch(0.75_0.14_85)]" />
-              <span className="section-label">Free AI-Powered Audit</span>
+              <span className="section-label">Free Beacon Signal Check</span>
               <div className="w-8 h-px bg-[oklch(0.75_0.14_85)]" />
             </motion.div>
 
@@ -262,7 +262,7 @@ export default function Audit() {
               ) : (
                 <>
                   <h3 className="font-serif text-xl text-[oklch(0.16_0.03_240)] mb-1">
-                    Request Your Free Audit
+                    Request Your Free Beacon Signal Check
                   </h3>
                   <p className="text-sm text-[oklch(0.45_0.03_240)] mb-6">
                     Takes 60 seconds. No account access required.
@@ -394,7 +394,7 @@ export default function Audit() {
                         "Submitting..."
                       ) : (
                         <>
-                          Request My Free Audit
+                          Request My Free Signal Check
                           <Send size={14} className="transition-transform group-hover:translate-x-1" />
                         </>
                       )}

@@ -114,8 +114,7 @@ export default function Contact() {
             >
               Every project starts with a conversation. We'll listen to your goals,
               audit your AI visibility, and outline a clear path forward — no obligation,
-              no sales pitch. Just honest guidance from a team that's been building
-              operational systems for over 40 years.
+              no sales pitch. Just honest guidance from a team with 40 years of operational discipline, guided by Navy principles.
             </motion.p>
 
             {/* Contact info */}

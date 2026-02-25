@@ -11,7 +11,7 @@ const HERO_IMG = "https://private-us-east-1.manuscdn.com/sessionFile/tKxNRtyvM8Z
 
 const stats = [
   { icon: Cpu, value: "50+", label: "AI Systems Deployed" },
-  { icon: Zap, value: "40+", label: "Years of Operations" },
+  { icon: Zap, value: "40+", label: "Years of Operational Discipline" },
   { icon: Globe, value: "6", label: "Brands Built" },
 ];
 
@@ -62,7 +62,7 @@ export default function Hero() {
             >
               People aren't just searching anymore — they're asking, and AI is answering.
               We build the AI-powered infrastructure that makes your business the confident
-              answer. 40 years of operations. Navy discipline. Technology that works.
+              answer. 40 years of operational discipline, guided by Navy principles. Technology that works.
             </motion.p>
 
             {/* CTAs */}

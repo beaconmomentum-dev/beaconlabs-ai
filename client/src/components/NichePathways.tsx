@@ -41,7 +41,7 @@ const pathways = [
     description:
       "Our principles of building robust, data-driven systems apply across industries. If you believe your business could be more efficient and visible, let's have a conversation.",
     href: "/audit",
-    cta: "Get a Free Audit",
+    cta: "Get a Free Signal Check",
     accentBg: "bg-[oklch(0.55_0.10_280/0.05)]",
     accentBorder: "border-[oklch(0.55_0.10_280/0.15)] hover:border-[oklch(0.55_0.10_280/0.4)]",
     accentIcon: "text-[oklch(0.50_0.10_280)]",

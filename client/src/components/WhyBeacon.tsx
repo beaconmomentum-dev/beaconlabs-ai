@@ -161,7 +161,7 @@ export default function WhyBeacon() {
             Other agencies teach how to reframe a $297/month AI tool into a $3,000 consulting engagement.
             We don't need to reframe — our engineering starts where their consulting ends.
             You're not paying for configuration. You're investing in real infrastructure,
-            built by a team with 40 years of operational experience, that compounds while others are still shopping for tools.
+            built by a team with 40 years of operational discipline, guided by Navy principles, that compounds while others are still shopping for tools.
           </p>
           <a
             href="#contact"

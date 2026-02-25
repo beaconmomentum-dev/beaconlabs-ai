@@ -167,7 +167,7 @@ export default function VideoExplainer() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-[oklch(0.65_0.03_185)] mb-8 leading-relaxed"
             >
-              With 40 years of operations and Navy discipline, Bob built Beacon Labs
+              With 40 years of operational discipline, guided by Navy principles, Bob built Beacon Labs
               on a simple belief: deliver results, stand behind your word, earn the
               relationship. In this video, Bob explains why this shift to AI-powered search is the most important change for businesses today.
             </motion.p>
@@ -206,7 +206,7 @@ export default function VideoExplainer() {
                 href="#contact"
                 className="group inline-flex items-center gap-2 font-mono text-xs tracking-[0.1em] uppercase px-6 py-3 bg-[oklch(0.75_0.14_85)] text-[oklch(0.16_0.03_240)] rounded-sm hover:bg-[oklch(0.80_0.13_85)] transition-all duration-300 hover:shadow-[0_0_25px_oklch(0.75_0.14_85/0.3)]"
               >
-                Get Your Free AI Visibility Audit
+                Get Your Free Beacon Signal Check
                 <ArrowRight
                   size={14}
                   className="transition-transform group-hover:translate-x-1"

@@ -101,7 +101,7 @@ const advertisingTiers: Tier[] = [
     description:
       "Every engagement starts here. We audit your advertising, architect your campaigns from scratch, and launch them. This one-time project fee covers everything upfront: competitive audit, campaign architecture, ad creative direction, pixel infrastructure, and launch. You pay, we build, you see results.",
     features: [
-      "Free Meta Ads audit (before you pay a dime)",
+      "Free AI Visibility Check (automated)",
       "Full competitive analysis (your ads vs. competitors)",
       "Campaign architecture & audience strategy",
       "Ad creative direction & copywriting",
@@ -111,7 +111,7 @@ const advertisingTiers: Tier[] = [
       "For ad budgets up to $5,000/mo",
       "$5,000 for ad budgets up to $25,000/mo",
     ],
-    cta: "Get Your Free Audit",
+    cta: "Start with a Free Check",
     ctaLink: "/audit",
     highlighted: false,
   },
@@ -374,7 +374,7 @@ export default function Pricing() {
         >
           {activeTab === "infrastructure"
             ? "All plans include a one-time engineering & build phase scoped during discovery. You're investing in infrastructure, not subscribing to software."
-            : "*Pricing scales with your managed ad spend — see tier details above for exact breakdowns. All advertising plans begin with a free Meta Ads audit. Ad spend is paid directly to the platforms — our fee covers strategy, management, and optimization."}
+            : "*Pricing scales with your managed ad spend — see tier details above for exact breakdowns. All advertising plans begin with a free Beacon Signal Check. A comprehensive, human-led Beacon Growth Blueprint is available for $497, which is credited in full toward any campaign build. Ad spend is paid directly to the platforms — our fee covers strategy, management, and optimization."}
         </motion.p>
       </div>
     </section>

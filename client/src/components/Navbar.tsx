@@ -2,7 +2,7 @@
  * Navbar — Blueprint Aesthetic
  * Frosted glass navigation bar with teal/gold accents.
  * Instrument Serif logo, JetBrains Mono nav labels.
- * Updated with niche landing page links and Free Audit CTA.
+ * Updated with niche landing page links and Free Signal Check CTA.
  */
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -100,7 +100,7 @@ export default function Navbar() {
             href="/audit"
             className="ml-4 font-mono text-xs tracking-[0.1em] uppercase px-5 py-2.5 bg-[oklch(0.40_0.08_185)] text-[oklch(0.97_0.005_80)] rounded-sm hover:bg-[oklch(0.35_0.07_185)] transition-all duration-300 hover:shadow-[0_0_20px_oklch(0.45_0.09_185/0.3)]"
           >
-            Free Ad Audit
+            Free Signal Check
           </a>
         </div>
 
@@ -146,7 +146,7 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className="mt-3 font-mono text-sm tracking-[0.1em] uppercase px-4 py-3 bg-[oklch(0.40_0.08_185)] text-[oklch(0.97_0.005_80)] rounded-sm text-center"
               >
-                Free Ad Audit
+                Free Signal Check
               </a>
             </div>
           </motion.div>

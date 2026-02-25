@@ -147,7 +147,7 @@ export default function Coaches() {
                 href="/audit"
                 className="group inline-flex items-center gap-2 font-mono text-sm tracking-[0.05em] uppercase px-7 py-3.5 bg-[oklch(0.40_0.08_185)] text-[oklch(0.97_0.005_80)] rounded-sm hover:bg-[oklch(0.35_0.07_185)] transition-all duration-300 hover:shadow-[0_0_30px_oklch(0.45_0.09_185/0.3)]"
               >
-                Get Your Free Ad Audit
+                Get Your Free Beacon Signal Check
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </a>
               <a
@@ -320,7 +320,7 @@ export default function Coaches() {
               href="/audit"
               className="group inline-flex items-center gap-2 font-mono text-sm tracking-[0.05em] uppercase px-7 py-3.5 bg-[oklch(0.75_0.14_85)] text-[oklch(0.16_0.03_240)] rounded-sm hover:bg-[oklch(0.70_0.14_80)] transition-all duration-300 hover:shadow-[0_0_30px_oklch(0.75_0.14_85/0.3)]"
             >
-              See How This Works for Your Practice — Get a Free Audit
+              See How This Works for Your Practice — Get a Free Signal Check
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </a>
           </motion.div>
@@ -459,7 +459,7 @@ export default function Coaches() {
               href="/audit"
               className="group inline-flex items-center gap-2 font-mono text-sm tracking-[0.05em] uppercase px-8 py-4 bg-[oklch(0.75_0.14_85)] text-[oklch(0.16_0.03_240)] rounded-sm hover:bg-[oklch(0.70_0.14_80)] transition-all duration-300 hover:shadow-[0_0_30px_oklch(0.75_0.14_85/0.3)]"
             >
-              Get Your Free Audit Now
+              Get Your Free Signal Check Now
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </a>
 
