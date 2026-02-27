@@ -255,6 +255,20 @@ const server = http.createServer(async (req, res) => {
     res.end(JSON.stringify({ status: 'ok', service: 'beaconlabs-form-handler' }));
     return;
   }
+  // Manus persistent state endpoint
+  if (req.method === 'GET' && req.url === '/state') {
+    import('fs').then(({ readFileSync }) => {
+      try {
+        const content = readFileSync('/opt/beacon-state.md', 'utf8');
+        res.writeHead(200, { ...corsHeaders, 'Content-Type': 'text/plain; charset=utf-8' });
+        res.end(content);
+      } catch (e) {
+        res.writeHead(404);
+        res.end('State file not found');
+      }
+    });
+    return;
+  }
 
   // Only accept POST to /api/contact
   if (req.method !== 'POST' || req.url !== '/api/contact') {
