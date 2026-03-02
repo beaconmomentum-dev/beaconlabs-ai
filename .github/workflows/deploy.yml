@@ -1,0 +1,85 @@
+name: Build and Deploy to Brands Hub
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build-and-deploy:
+    name: Build Vite/React app and deploy to beaconlabs.ai
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: latest
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Vite frontend + Express server
+        run: pnpm run build
+        env:
+          NODE_ENV: production
+
+      - name: Deploy via SSH (rsync dist + restart PM2)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.BRANDS_HUB_SERVER_IP }}
+          username: root
+          key: ${{ secrets.BRANDS_HUB_SSH_KEY }}
+          script: |
+            set -e
+            echo "=== Beacon Labs — Brands Hub Deploy ==="
+            echo "Timestamp: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+
+            DEPLOY_DIR="/var/www/beaconlabs-ai"
+
+            # Pull latest code
+            cd $DEPLOY_DIR
+            git fetch origin
+            git reset --hard origin/main || git reset --hard origin/master
+            echo "✓ Code updated"
+
+            # Install dependencies (production only)
+            pnpm install --frozen-lockfile --prod
+            echo "✓ Dependencies installed"
+
+            # Build the Vite frontend + Express server bundle
+            NODE_ENV=production pnpm run build
+            echo "✓ Build complete"
+
+            # Restart the PM2 process
+            if pm2 list | grep -q "beaconlabs"; then
+              pm2 restart beaconlabs
+            else
+              pm2 start dist/index.js --name beaconlabs
+            fi
+            pm2 save
+            echo "✓ PM2 restarted"
+
+            echo "=== Deploy complete ==="
+
+# ── Setup Instructions ────────────────────────────────────────────────────────
+# Add these secrets to GitHub → Settings → Secrets and variables → Actions:
+#
+#   BRANDS_HUB_SERVER_IP  = 159.203.81.39
+#   BRANDS_HUB_SSH_KEY    = (contents of manus_agent_beacon_ed25519 private key)
+#
+# The public key (manus_agent_beacon_ed25519_20260302.pub) must be added to
+# /root/.ssh/authorized_keys on the Brands Hub server first.
+#
+# Note: pnpm must be installed on the Brands Hub server:
+#   npm install -g pnpm
+# ─────────────────────────────────────────────────────────────────────────────
