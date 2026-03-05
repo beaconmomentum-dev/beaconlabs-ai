@@ -1,5 +1,6 @@
 import http from 'node:http';
 import https from 'node:https';
+import { createHash } from 'node:crypto';
 
 // ---- Configuration (loaded from environment variables on the server) ----
 // Set these in /etc/systemd/system/beaconlabs-form.service or a .env file
@@ -7,6 +8,78 @@ const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL || '';
 const GHL_API_KEY      = process.env.GHL_API_KEY || '';
 const GHL_LOCATION_ID  = process.env.GHL_LOCATION_ID || 'Z4OoFmxrotxASibl2PKv';
 const GHL_BASE         = 'https://services.leadconnectorhq.com';
+
+// ---- Meta Conversions API (CAPI) ----
+const META_PIXEL_ID        = process.env.META_PIXEL_ID || '2728401540849226';
+const META_CAPI_TOKEN      = process.env.META_CAPI_ACCESS_TOKEN || '';
+const META_CAPI_API_VERSION = 'v19.0';
+
+
+
+function hashPII(value) {
+  if (!value) return undefined;
+  return createHash('sha256').update(String(value).trim().toLowerCase()).digest('hex');
+}
+
+async function sendCAPILead({ email, firstName, lastName, ip, userAgent, eventId }) {
+  if (!META_CAPI_TOKEN) {
+    console.warn('[CAPI] META_CAPI_ACCESS_TOKEN not set — skipping server-side Lead event');
+    return;
+  }
+  const userData = {
+    ...(email     && { em: [hashPII(email)] }),
+    ...(firstName && { fn: [hashPII(firstName)] }),
+    ...(lastName  && { ln: [hashPII(lastName)] }),
+    ...(ip        && { client_ip_address: ip }),
+    ...(userAgent && { client_user_agent: userAgent }),
+  };
+  const payload = {
+    data: [{
+      event_name: 'Lead',
+      event_time: Math.floor(Date.now() / 1000),
+      event_id: eventId || `bl-lead-${Date.now()}`,
+      event_source_url: 'https://beaconlabs.ai/signal-check',
+      action_source: 'website',
+      user_data: userData,
+    }],
+  };
+  const body = JSON.stringify(payload);
+  return new Promise((resolve) => {
+    const options = {
+      hostname: 'graph.facebook.com',
+      path: `/${META_CAPI_API_VERSION}/${META_PIXEL_ID}/events?access_token=${META_CAPI_TOKEN}`,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(body),
+      },
+    };
+    const req = https.request(options, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        try {
+          const parsed = JSON.parse(data);
+          if (parsed.error) {
+            console.error('[CAPI] Lead event error:', parsed.error.message);
+          } else {
+            console.log(`[CAPI] Lead event sent — events_received: ${parsed.events_received}`);
+          }
+        } catch (e) {
+          console.error('[CAPI] Parse error:', e.message);
+        }
+        resolve();
+      });
+    });
+    req.on('error', (err) => {
+      console.error('[CAPI] Request error:', err.message);
+      resolve();
+    });
+    req.write(body);
+    req.end();
+  });
+}
+
 const PORT             = 3005;
 
 // Pipeline / stage IDs (Beacon Labs AI Services pipeline)
@@ -324,10 +397,28 @@ const server = http.createServer(async (req, res) => {
     console.error(`[Slack] Error: ${slackErr.message}`);
   }
 
+
+  // Meta CAPI: fire server-side Lead event (non-blocking, parallel with response)
+  let capiStatus = 'skipped';
+  try {
+    await sendCAPILead({
+      email: data.email,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      ip: req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.socket?.remoteAddress,
+      userAgent: req.headers['user-agent'],
+      eventId: data.capiEventId || `bl-lead-${Date.now()}`,
+    });
+    capiStatus = 'sent';
+  } catch (capiErr) {
+    console.error(`[CAPI] Error: ${capiErr.message}`);
+  }
+
   const response = {
     success: true,
     slack: slackStatus,
     ghl: ghlStatus,
+    capi: capiStatus,
     ...(contactId && { contactId }),
     ...(oppId && { opportunityId: oppId }),
   };
