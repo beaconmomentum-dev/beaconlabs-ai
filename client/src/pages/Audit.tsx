@@ -123,6 +123,14 @@ export default function Audit() {
       // Silently handle — GHL webhook may not be configured yet
     }
 
+    // Fire Meta Pixel Lead event on successful form submission
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Lead', {
+        content_name: 'Signal Check Request',
+        content_category: 'Beacon Labs Audit',
+      });
+    }
+
     setSubmitted(true);
     setSubmitting(false);
   };
