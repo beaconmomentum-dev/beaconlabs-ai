@@ -52,8 +52,8 @@ jobs:
             git reset --hard origin/main || git reset --hard origin/master
             echo "✓ Code updated"
 
-            # Install dependencies (production only)
-            pnpm install --frozen-lockfile --prod
+            # Install ALL deps (devDeps needed for vite build)
+            pnpm install --frozen-lockfile
             echo "✓ Dependencies installed"
 
             # Build the Vite frontend + Express server bundle
