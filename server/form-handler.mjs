@@ -83,8 +83,18 @@ async function sendCAPILead({ email, firstName, lastName, ip, userAgent, eventId
 const PORT             = 3005;
 
 // Pipeline / stage IDs (Beacon Labs AI Services pipeline)
-const PIPELINE_AI_SERVICES  = 'bvtePhtYnqw1EsmeQUrL';
-const STAGE_AI_NEW_INQUIRY   = '202a08e1-7f3a-42c9-879f-12704030768d';
+const PIPELINE_AI_SERVICES       = 'bvtePhtYnqw1EsmeQUrL';
+const STAGE_AI_NEW_INQUIRY        = '202a08e1-7f3a-42c9-879f-12704030768d';
+// Signal Check funnel stages (added 2026-03-07 for Coffy clone funnel)
+// NOTE: These stage IDs must be updated after adding stages in GHL UI
+const STAGE_SIGNAL_CHECK_REQUESTED = process.env.GHL_STAGE_SIGNAL_CHECK_REQUESTED || STAGE_AI_NEW_INQUIRY;
+const STAGE_SIGNAL_CHECK_COMPLETED = process.env.GHL_STAGE_SIGNAL_CHECK_COMPLETED || STAGE_AI_NEW_INQUIRY;
+const STAGE_BLUEPRINT_INTEREST     = process.env.GHL_STAGE_BLUEPRINT_INTEREST     || STAGE_AI_NEW_INQUIRY;
+
+// GHL custom field IDs (created 2026-03-07)
+const CF_SIGNAL_CHECK_SCORE = 'aMSKA5IOIiESi6PvpbNZ';
+const CF_SIGNAL_CHECK_DATE  = 'lRxetkN4EvDEdHwySnEl';
+const CF_REEL_COMMENT_KW    = 'f9dS4bpz5E0BevIcc3TM';
 
 const ALLOWED_ORIGINS = [
   'https://beaconlabs.ai',
@@ -340,6 +350,189 @@ const server = http.createServer(async (req, res) => {
         res.end('State file not found');
       }
     });
+    return;
+  }
+
+  // ---- /api/signal-check endpoint ----
+  if (req.method === 'POST' && req.url === '/api/signal-check') {
+    let body = '';
+    for await (const chunk of req) body += chunk;
+    let data;
+    try {
+      data = JSON.parse(body);
+    } catch {
+      res.writeHead(400, { ...corsHeaders, 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Invalid JSON' }));
+      return;
+    }
+
+    if (!data.firstName || !data.lastName || !data.email || !data.businessName) {
+      res.writeHead(400, { ...corsHeaders, 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Missing required fields: firstName, lastName, email, businessName' }));
+      return;
+    }
+
+    console.log(`[${new Date().toISOString()}] Signal Check: ${data.firstName} ${data.lastName} <${data.email}> — ${data.businessName}`);
+
+    // Build GHL contact with Signal Check tags and custom fields
+    const signalTags = [
+      'signal-check-requested',
+      'coffy-clone-funnel',
+      'beacon-labs',
+      ...(data.reelKeyword === 'SIGNAL' ? ['signal-reel-commenter'] : []),
+      ...(data.reelKeyword === 'BLUEPRINT' ? ['blueprint-reel-commenter'] : []),
+    ];
+
+    const signalCustomFields = [
+      { id: CF_SIGNAL_CHECK_DATE, field_value: new Date().toISOString().split('T')[0] },
+      ...(data.reelKeyword ? [{ id: CF_REEL_COMMENT_KW, field_value: data.reelKeyword }] : []),
+    ];
+
+    let contactId = null;
+    let oppId = null;
+    let ghlStatus = 'failed';
+    try {
+      // Upsert contact
+      const searchResult = await new Promise((resolve, reject) => {
+        const parsed = new URL(`${GHL_BASE}/contacts/?locationId=${GHL_LOCATION_ID}&query=${encodeURIComponent(data.email)}&limit=1`);
+        const options = {
+          hostname: parsed.hostname, port: 443,
+          path: parsed.pathname + parsed.search, method: 'GET',
+          headers: { 'Content-Type': 'application/json', ...ghlHeaders() },
+        };
+        const req2 = https.request(options, (res2) => {
+          let b = ''; res2.on('data', c => b += c); res2.on('end', () => resolve({ status: res2.statusCode, body: b }));
+        });
+        req2.on('error', reject); req2.end();
+      });
+
+      let existingId = null;
+      try { const p = JSON.parse(searchResult.body); if (p.contacts?.length > 0) existingId = p.contacts[0].id; } catch {}
+
+      const contactPayload = {
+        firstName: data.firstName, lastName: data.lastName, email: data.email,
+        companyName: data.businessName || '', locationId: GHL_LOCATION_ID,
+        source: 'Signal Check Form', tags: signalTags, customFields: signalCustomFields,
+      };
+
+      if (existingId) {
+        await new Promise((resolve, reject) => {
+          const b = JSON.stringify({ locationId: GHL_LOCATION_ID, ...contactPayload });
+          const options = {
+            hostname: 'services.leadconnectorhq.com', port: 443,
+            path: `/contacts/${existingId}`, method: 'PUT',
+            headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(b), ...ghlHeaders() },
+          };
+          const req2 = https.request(options, (res2) => { let rb = ''; res2.on('data', c => rb += c); res2.on('end', () => resolve({ status: res2.statusCode, body: rb })); });
+          req2.on('error', reject); req2.write(b); req2.end();
+        });
+        contactId = existingId;
+        console.log(`[GHL] Updated signal-check contact ${existingId}`);
+      } else {
+        const createResult = await postJSON(`${GHL_BASE}/contacts/`, contactPayload, ghlHeaders());
+        try { const p = JSON.parse(createResult.body); contactId = p.contact?.id || null; } catch {}
+        console.log(`[GHL] Created signal-check contact ${contactId} (${createResult.status})`);
+      }
+
+      // Create opportunity in Signal Check Requested stage
+      if (contactId) {
+        const oppPayload = {
+          pipelineId: PIPELINE_AI_SERVICES, locationId: GHL_LOCATION_ID,
+          name: `${data.firstName} ${data.lastName} — Signal Check (${data.businessName})`,
+          pipelineStageId: STAGE_SIGNAL_CHECK_REQUESTED,
+          status: 'open', contactId, monetaryValue: 0, source: 'Signal Check Form',
+        };
+        const oppResult = await postJSON(`${GHL_BASE}/opportunities/`, oppPayload, ghlHeaders());
+        try { const p = JSON.parse(oppResult.body); oppId = p.opportunity?.id || null; } catch {}
+        console.log(`[GHL] Created signal-check opportunity ${oppId} (${oppResult.status})`);
+        ghlStatus = 'created';
+      }
+    } catch (err) {
+      console.error(`[GHL] Signal check error: ${err.message}`);
+    }
+
+    // Fire Meta CAPI Lead event
+    let capiStatus = 'skipped';
+    try {
+      await sendCAPILead({
+        email: data.email, firstName: data.firstName, lastName: data.lastName,
+        ip: req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.socket?.remoteAddress,
+        userAgent: req.headers['user-agent'],
+        eventId: data.capiEventId || `bl-signal-${Date.now()}`,
+      });
+      capiStatus = 'sent';
+    } catch (capiErr) {
+      console.error(`[CAPI] Signal check error: ${capiErr.message}`);
+    }
+
+    // Slack notification
+    try {
+      await postJSON(SLACK_WEBHOOK_URL, {
+        blocks: [
+          { type: 'header', text: { type: 'plain_text', text: '📡 New Signal Check Submission', emoji: true } },
+          { type: 'section', fields: [
+            { type: 'mrkdwn', text: `*Name:*\n${data.firstName} ${data.lastName}` },
+            { type: 'mrkdwn', text: `*Email:*\n${data.email}` },
+          ]},
+          { type: 'section', fields: [
+            { type: 'mrkdwn', text: `*Business:*\n${data.businessName}` },
+            { type: 'mrkdwn', text: `*Source:*\n${data.reelKeyword ? `Reel (${data.reelKeyword})` : 'Direct'}` },
+          ]},
+          { type: 'context', elements: [{ type: 'mrkdwn', text: `GHL: ${ghlStatus} | CAPI: ${capiStatus} | ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })} ET` }] },
+        ]
+      });
+    } catch {}
+
+    res.writeHead(200, { ...corsHeaders, 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      success: true, ghl: ghlStatus, capi: capiStatus,
+      ...(contactId && { contactId }), ...(oppId && { opportunityId: oppId }),
+    }));
+    return;
+  }
+
+  // ---- /api/signal-check-complete endpoint (called after report is generated/delivered) ----
+  if (req.method === 'POST' && req.url === '/api/signal-check-complete') {
+    let body = '';
+    for await (const chunk of req) body += chunk;
+    let data;
+    try { data = JSON.parse(body); } catch {
+      res.writeHead(400, { ...corsHeaders, 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Invalid JSON' })); return;
+    }
+
+    if (!data.contactId || data.score === undefined) {
+      res.writeHead(400, { ...corsHeaders, 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Missing contactId or score' })); return;
+    }
+
+    try {
+      // Update contact: add signal-check-completed tag, set score custom field
+      const updatePayload = {
+        locationId: GHL_LOCATION_ID,
+        tags: ['signal-check-completed'],
+        customFields: [
+          { id: CF_SIGNAL_CHECK_SCORE, field_value: String(data.score) },
+        ],
+      };
+      await new Promise((resolve, reject) => {
+        const b = JSON.stringify(updatePayload);
+        const options = {
+          hostname: 'services.leadconnectorhq.com', port: 443,
+          path: `/contacts/${data.contactId}`, method: 'PUT',
+          headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(b), ...ghlHeaders() },
+        };
+        const req2 = https.request(options, (res2) => { let rb = ''; res2.on('data', c => rb += c); res2.on('end', () => resolve(rb)); });
+        req2.on('error', reject); req2.write(b); req2.end();
+      });
+      console.log(`[GHL] Signal check completed for contact ${data.contactId}, score: ${data.score}`);
+      res.writeHead(200, { ...corsHeaders, 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: true }));
+    } catch (err) {
+      console.error(`[GHL] signal-check-complete error: ${err.message}`);
+      res.writeHead(500, { ...corsHeaders, 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'GHL update failed' }));
+    }
     return;
   }
 
