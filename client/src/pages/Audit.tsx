@@ -157,7 +157,7 @@ export default function Audit() {
               className="flex items-center justify-center gap-3 mb-6"
             >
               <div className="w-8 h-px bg-[oklch(0.75_0.14_85)]" />
-              <span className="section-label">Free Beacon Signal Check</span>
+              <span className="section-label">Beacon Signal Check</span>
               <div className="w-8 h-px bg-[oklch(0.75_0.14_85)]" />
             </motion.div>
 
@@ -167,9 +167,9 @@ export default function Audit() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="font-serif text-[2.5rem] md:text-[3.25rem] lg:text-[3.75rem] leading-[1.08] tracking-tight text-[oklch(0.16_0.03_240)] mb-6"
             >
-              Your Ads Are Telling a Story.
+              When Everything Is Shifting,
               <br />
-              <span className="text-[oklch(0.75_0.14_85)]">Let Us Read It for You.</span>
+              <span className="text-[oklch(0.75_0.14_85)]">Clarity Is the Competitive Advantage.</span>
             </motion.h1>
 
             <motion.p
@@ -178,9 +178,10 @@ export default function Audit() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-lg md:text-xl text-[oklch(0.40_0.03_240)] leading-relaxed max-w-2xl mx-auto mb-8"
             >
-              Get a comprehensive, AI-generated analysis of your Meta advertising
-              performance — including what your competitors are doing differently.
-              Delivered to your inbox in under 24 hours. Completely free.
+              The Beacon Signal Check tells you exactly what in your business is built to hold —
+              and what is exposed to the disruption happening right now. A direct assessment of
+              your positioning, visibility, and platform dependency. Delivered within 24 hours.
+              No cost. No obligation.
             </motion.p>
 
             <motion.div
@@ -192,7 +193,7 @@ export default function Audit() {
               {[
                 "No account access needed",
                 "Delivered in 24 hours",
-                "100% free, no obligation",
+                "No cost, no obligation",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <Check size={14} className="text-[oklch(0.45_0.09_185)]" />
@@ -309,10 +310,10 @@ export default function Audit() {
               ) : (
                 <>
                   <h3 className="font-serif text-xl text-[oklch(0.16_0.03_240)] mb-1">
-                    Request Your Free Beacon Signal Check
+                    Request Your Beacon Signal Check
                   </h3>
                   <p className="text-sm text-[oklch(0.45_0.03_240)] mb-6">
-                    Takes 60 seconds. No account access required.
+                    Takes 60 seconds. No cost. No account access required.
                   </p>
 
                   <form onSubmit={handleSubmit} className="space-y-4">
@@ -441,7 +442,7 @@ export default function Audit() {
                         "Submitting..."
                       ) : (
                         <>
-                          Request My Free Signal Check
+                          Request My Signal Check
                           <Send size={14} className="transition-transform group-hover:translate-x-1" />
                         </>
                       )}

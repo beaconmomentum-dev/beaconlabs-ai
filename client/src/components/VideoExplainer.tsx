@@ -203,17 +203,17 @@ export default function VideoExplainer() {
               transition={{ duration: 0.5, delay: 0.8 }}
             >
               <a
-                href="#contact"
+                href="/signal-check"
                 className="group inline-flex items-center gap-2 font-mono text-xs tracking-[0.1em] uppercase px-6 py-3 bg-[oklch(0.75_0.14_85)] text-[oklch(0.16_0.03_240)] rounded-sm hover:bg-[oklch(0.80_0.13_85)] transition-all duration-300 hover:shadow-[0_0_25px_oklch(0.75_0.14_85/0.3)]"
               >
-                Get Your Free Beacon Signal Check
+                Get Your Beacon Signal Check
                 <ArrowRight
                   size={14}
                   className="transition-transform group-hover:translate-x-1"
                 />
               </a>
               <p className="font-mono text-[0.6rem] tracking-[0.1em] text-[oklch(0.45_0.03_185)] mt-3">
-                No obligation. No sales pitch. Just clarity.
+                No cost. No obligation. A clear read on what you are standing on.
               </p>
             </motion.div>
           </div>

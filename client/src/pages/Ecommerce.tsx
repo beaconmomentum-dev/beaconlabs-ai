@@ -150,7 +150,7 @@ export default function Ecommerce() {
                 href="/audit"
                 className="group inline-flex items-center gap-2 font-mono text-sm tracking-[0.05em] uppercase px-7 py-3.5 bg-[oklch(0.40_0.08_185)] text-[oklch(0.97_0.005_80)] rounded-sm hover:bg-[oklch(0.35_0.07_185)] transition-all duration-300 hover:shadow-[0_0_30px_oklch(0.45_0.09_185/0.3)]"
               >
-                Get Your Free Beacon Signal Check
+                Get Your Beacon Signal Check
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </a>
               <a
@@ -363,7 +363,7 @@ export default function Ecommerce() {
               href="/audit"
               className="group inline-flex items-center gap-2 font-mono text-sm tracking-[0.05em] uppercase px-7 py-3.5 bg-[oklch(0.75_0.14_85)] text-[oklch(0.16_0.03_240)] rounded-sm hover:bg-[oklch(0.70_0.14_80)] transition-all duration-300 hover:shadow-[0_0_30px_oklch(0.75_0.14_85/0.3)]"
             >
-              See How This Works for Your Brand — Get a Free Signal Check
+              See How This Works for Your Brand — Get Your Signal Check
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </a>
           </motion.div>
@@ -481,9 +481,7 @@ export default function Ecommerce() {
               <span className="text-[oklch(0.75_0.14_85)]">Start With Clarity.</span>
             </h2>
             <p className="text-[oklch(0.60_0.02_185)] max-w-2xl mx-auto text-lg mb-8">
-              Get a free Beacon Signal Check of your Meta ad performance. We'll show you
-              exactly where opportunities exist, what's working, what isn't, and a clear
-              path forward — delivered to your inbox in under 24 hours.
+              The Beacon Signal Check gives you a clear read on your business's current positioning, visibility, and platform dependency — what is working, what is exposed, and where to focus next. Delivered to your inbox within 24 hours. No cost. No obligation.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -505,12 +503,12 @@ export default function Ecommerce() {
               href="/audit"
               className="group inline-flex items-center gap-2 font-mono text-sm tracking-[0.05em] uppercase px-8 py-4 bg-[oklch(0.75_0.14_85)] text-[oklch(0.16_0.03_240)] rounded-sm hover:bg-[oklch(0.70_0.14_80)] transition-all duration-300 hover:shadow-[0_0_30px_oklch(0.75_0.14_85/0.3)]"
             >
-              Get Your Free Signal Check Now
+              Get Your Signal Check Now
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </a>
 
             <p className="font-mono text-xs text-[oklch(0.50_0.02_185)] mt-6">
-              No obligation. No credit card. Just honest guidance.
+              No cost. No credit card. No obligation. Just a clear read on where you stand.
             </p>
           </motion.div>
         </div>

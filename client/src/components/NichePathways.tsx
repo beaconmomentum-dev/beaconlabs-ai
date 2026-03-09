@@ -39,9 +39,9 @@ const pathways = [
     icon: Building2,
     title: "Other Industries",
     description:
-      "Our principles of building robust, data-driven systems apply across industries. If you believe your business could be more efficient and visible, let's have a conversation.",
+      "In a shifting market, the businesses that hold their ground are the ones that know exactly what they are standing on. The Signal Check tells you where you are, what is working, and where your exposure is.",
     href: "/audit",
-    cta: "Get a Free Signal Check",
+    cta: "Get Your Signal Check",
     accentBg: "bg-[oklch(0.55_0.10_280/0.05)]",
     accentBorder: "border-[oklch(0.55_0.10_280/0.15)] hover:border-[oklch(0.55_0.10_280/0.4)]",
     accentIcon: "text-[oklch(0.50_0.10_280)]",

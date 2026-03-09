@@ -45,6 +45,12 @@ const benefits = [
     description:
       "Your branded Signal Check report lands in your inbox within one business day. No sales call required to receive it.",
   },
+  {
+    icon: Globe,
+    title: "Platform Dependency Assessment",
+    description:
+      "We map how much of your business's visibility and revenue depends on platforms you do not control — and show you exactly where your exposure is in the current environment.",
+  },
 ];
 
 const processSteps = [
@@ -215,21 +221,22 @@ export default function SignalCheck() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00d4ff]/10 border border-[#00d4ff]/20 text-[#00d4ff] text-sm font-medium mb-8">
             <Zap className="w-4 h-4" />
-            Free AI Visibility Analysis
+            No Cost. No Obligation. Just Clarity.
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Is Your Business{" "}
-            <span className="text-[#00d4ff]">Invisible to AI?</span>
+            When Everything Is Shifting,{" "}
+            <span className="text-[#00d4ff]">Clarity Is the Competitive Advantage</span>
           </h1>
           <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-            Get your free AI Visibility Score — a full scan of how ChatGPT, Gemini, Perplexity,
-            and Claude respond when potential customers search for what you offer.
+            The Beacon Signal Check tells you exactly what in your business is built to hold — and
+            what is exposed to the disruption happening right now. 15 minutes. No sales pitch.
+            No obligation. Just a clear read on your signal.
           </p>
           <a
             href="#signal-check-form"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#00d4ff] text-black font-bold rounded-lg hover:bg-[#00b8d9] transition-colors text-lg"
           >
-            Get My Free Signal Check
+            Get My Signal Check — No Cost
             <ArrowRight className="w-5 h-5" />
           </a>
         </motion.div>
@@ -240,8 +247,9 @@ export default function SignalCheck() {
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">What You'll Receive</h2>
           <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            A comprehensive AI visibility report — not a generic checklist, but a real scan of how
-            AI platforms see your specific business right now.
+            A direct assessment of your business's current positioning, visibility, and stability —
+            not a generic checklist, but a real scan of what is working, what is missing, and where
+            your exposure is in a market that is changing faster than most advisory frameworks can track.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             {benefits.map((b, i) => (
@@ -298,9 +306,10 @@ export default function SignalCheck() {
           className="max-w-2xl mx-auto"
         >
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-4">Run Your Free Signal Check</h2>
+            <h2 className="text-3xl font-bold mb-4">Run Your Signal Check</h2>
             <p className="text-gray-400">
-              No credit card. No sales call. Just your AI Visibility Score and a clear action plan.
+              No credit card. No sales call. A clear read on what you are standing on —
+              delivered within 24 hours.
             </p>
           </div>
 
@@ -438,13 +447,13 @@ export default function SignalCheck() {
               ) : (
                 <>
                   <Send className="w-5 h-5" />
-                  Run My Free Signal Check
+                  Run My Signal Check
                 </>
               )}
             </button>
 
             <p className="text-center text-gray-500 text-xs">
-              Free. No credit card. No obligation. Report delivered within 24 hours.
+              No cost. No credit card. No obligation. Your report delivered within 24 hours.
             </p>
           </form>
         </motion.div>

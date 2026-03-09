@@ -374,7 +374,7 @@ export default function Pricing() {
         >
           {activeTab === "infrastructure"
             ? "All plans include a one-time engineering & build phase scoped during discovery. You're investing in infrastructure, not subscribing to software."
-            : "*Pricing scales with your managed ad spend — see tier details above for exact breakdowns. All advertising plans begin with a free Beacon Signal Check. A comprehensive, human-led Beacon Growth Blueprint is available for $497, which is credited in full toward any campaign build. Ad spend is paid directly to the platforms — our fee covers strategy, management, and optimization."}
+            : "*Pricing scales with your managed ad spend — see tier details above for exact breakdowns. All advertising plans begin with a Beacon Signal Check — a no-cost assessment of your current positioning, visibility, and platform dependency. A comprehensive, human-led Beacon Growth Blueprint is available for $497, which is credited in full toward any campaign build. Ad spend is paid directly to the platforms — our fee covers strategy, management, and optimization."}
         </motion.p>
       </div>
     </section>
