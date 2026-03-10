@@ -7,12 +7,8 @@
 import { useEffect, useState } from "react";
 import { CheckCircle, ChevronRight, Loader2 } from "lucide-react";
 
-const VIDEO_URL =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663026807979/dacTYHPvZMkjxCso.pdf";
-// Replace VIDEO_URL above with the actual CDN mp4 once a "what happens next" explainer is produced.
-// For now we embed the Blueprint intro video as a refresher / context setter.
 const BLUEPRINT_VIDEO_URL =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663026807979/blueprint_video_web.mp4";
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663026807979/hYOjhOBSPIKYEzKC.mp4";
 
 const INTAKE_ENDPOINT = "/api/blueprint/intake";
 
