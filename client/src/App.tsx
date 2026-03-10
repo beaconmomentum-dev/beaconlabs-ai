@@ -9,6 +9,7 @@ import Ecommerce from "./pages/Ecommerce";
 import Coaches from "./pages/Coaches";
 import Audit from "./pages/Audit";
 import SignalCheck from "./pages/SignalCheck";
+import GrowthBlueprint from "./pages/GrowthBlueprint";
 
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
       <Route path={"/coaches"} component={Coaches} />
       <Route path={"/audit"} component={Audit} />
       <Route path={"/signal-check"} component={SignalCheck} />
+      <Route path={"/growth-blueprint"} component={GrowthBlueprint} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
