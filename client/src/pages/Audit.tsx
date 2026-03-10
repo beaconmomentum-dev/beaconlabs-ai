@@ -109,30 +109,49 @@ export default function Audit() {
     setSubmitting(true);
 
     try {
-      // Submit to GHL webhook
-      await fetch("https://hooks.beaconmomentum.io/webhook/beacon-labs-audit", {
+      // Split full name into firstName / lastName for GHL
+      const nameParts = (formData.name || '').trim().split(/\s+/);
+      const firstName = nameParts[0] || 'Unknown';
+      const lastName  = nameParts.slice(1).join(' ') || '.';
+
+      // Submit to server-side API which forwards to GHL
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          ...formData,
-          source: "beacon-labs-audit-page",
-          timestamp: new Date().toISOString(),
+          firstName,
+          lastName,
+          email:   formData.email,
+          company: formData.businessName,
+          website: formData.website,
+          service: 'Signal Check',
+          budget:  formData.monthlyAdSpend,
+          message: formData.biggestChallenge
+            ? `Industry: ${formData.industry}\nBiggest Challenge: ${formData.biggestChallenge}`
+            : `Industry: ${formData.industry}`,
         }),
       });
-    } catch {
-      // Silently handle — GHL webhook may not be configured yet
-    }
 
-    // Fire Meta Pixel Lead event on successful form submission
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Lead', {
-        content_name: 'Signal Check Request',
-        content_category: 'Beacon Labs Audit',
-      });
-    }
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error((err as any).error || "Submission failed");
+      }
 
-    setSubmitted(true);
-    setSubmitting(false);
+      // Fire Meta Pixel Lead event on successful form submission
+      if (typeof window !== 'undefined' && (window as any).fbq) {
+        (window as any).fbq('track', 'Lead', {
+          content_name: 'Signal Check Request',
+          content_category: 'Beacon Labs Audit',
+        });
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Form submission error:", err);
+      alert("Something went wrong submitting your request. Please try again or email us at hello@beaconlabs.ai");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleChange = (
