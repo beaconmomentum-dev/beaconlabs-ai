@@ -1,4 +1,4 @@
-name: Build and Deploy to Brands Hub
+name: Build and Deploy to Beacon-Web-Production
 
 on:
   push:
@@ -33,18 +33,19 @@ jobs:
         env:
           NODE_ENV: production
 
-      - name: Deploy via SSH (rsync dist + restart PM2)
+      - name: Deploy static files to Beacon-Web-Production
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.BRANDS_HUB_SERVER_IP }}
+          host: ${{ secrets.BEACON_WEB_PRODUCTION_IP }}
           username: root
-          key: ${{ secrets.BRANDS_HUB_SSH_KEY }}
+          key: ${{ secrets.BEACON_WEB_PRODUCTION_SSH_KEY }}
           script: |
             set -e
-            echo "=== Beacon Labs — Brands Hub Deploy ==="
+            echo "=== Beacon Labs — Web Production Deploy ==="
             echo "Timestamp: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
 
-            DEPLOY_DIR="/var/www/beaconlabs-ai"
+            DEPLOY_DIR="/var/www/beaconlabs.ai"
+            DIST_DIR="$DEPLOY_DIR/dist"
 
             # Pull latest code
             cd $DEPLOY_DIR
@@ -60,26 +61,23 @@ jobs:
             NODE_ENV=production pnpm run build
             echo "✓ Build complete"
 
-            # Restart the PM2 process
-            if pm2 list | grep -q "beaconlabs"; then
-              pm2 restart beaconlabs
-            else
-              pm2 start dist/index.js --name beaconlabs
+            # Restart the form handler service with updated code
+            if systemctl is-active --quiet beaconlabs-form; then
+              cp server/form-handler.mjs /opt/beaconlabs-form-handler/server.mjs
+              systemctl restart beaconlabs-form
+              echo "✓ Form handler restarted"
             fi
-            pm2 save
-            echo "✓ PM2 restarted"
 
             echo "=== Deploy complete ==="
 
 # ── Setup Instructions ────────────────────────────────────────────────────────
 # Add these secrets to GitHub → Settings → Secrets and variables → Actions:
 #
-#   BRANDS_HUB_SERVER_IP  = 159.203.81.39
-#   BRANDS_HUB_SSH_KEY    = (contents of manus_agent_beacon_ed25519 private key)
+#   BEACON_WEB_PRODUCTION_IP  = 143.198.23.240
+#   BEACON_WEB_PRODUCTION_SSH_KEY = (contents of manus_deploy private key)
 #
-# The public key (manus_agent_beacon_ed25519_20260302.pub) must be added to
-# /root/.ssh/authorized_keys on the Brands Hub server first.
+# The public key must be added to /root/.ssh/authorized_keys on 143.198.23.240
 #
-# Note: pnpm must be installed on the Brands Hub server:
+# Note: pnpm must be installed on the production server:
 #   npm install -g pnpm
 # ─────────────────────────────────────────────────────────────────────────────
