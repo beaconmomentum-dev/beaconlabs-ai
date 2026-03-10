@@ -4,9 +4,11 @@
  * Matches the CTA page in the Signal Check PDF report.
  */
 
-import { ExternalLink, CheckCircle, ArrowRight } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
 
 const STRIPE_LINK = "https://buy.stripe.com/cNibJ1e2M46m0XT45m2400n";
+const VIDEO_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663026807979/bYvwGQdArIxHxIxV.mp4";
 
 const deliverables = [
   {
@@ -65,12 +67,26 @@ export default function GrowthBlueprint() {
           <span className="text-[#00e5cc]">Human Strategy.</span>
         </h1>
 
-        <p className="text-white/70 text-lg max-w-xl mb-12">
+        <p className="text-white/70 text-lg max-w-xl mb-10">
           The Signal Check revealed the data. The{" "}
           <strong className="text-white">Growth Blueprint</strong> is where our
           team turns that data into a custom, actionable plan built specifically
           for your business.
         </p>
+
+        {/* Video embed */}
+        <div className="w-full max-w-2xl mb-14 rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-[#00e5cc]/10">
+          <video
+            src={VIDEO_URL}
+            controls
+            playsInline
+            preload="metadata"
+            poster=""
+            className="w-full aspect-video bg-black"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
 
         {/* Deliverables */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl w-full mb-14 text-left">
