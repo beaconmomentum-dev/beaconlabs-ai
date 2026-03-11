@@ -86,9 +86,14 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-[oklch(0.45_0.09_185/0.1)] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="font-mono text-[0.6rem] tracking-[0.1em] text-[oklch(0.40_0.02_240)]">
-            &copy; {new Date().getFullYear()} Beacon Labs. All rights reserved.
-          </span>
+          <div className="flex flex-col gap-1">
+            <span className="font-mono text-[0.6rem] tracking-[0.1em] text-[oklch(0.40_0.02_240)]">
+              &copy; {new Date().getFullYear()} Beacon Labs &mdash; a Beacon Momentum, LLC company. All rights reserved.
+            </span>
+            <span className="font-mono text-[0.55rem] tracking-[0.08em] text-[oklch(0.35_0.02_240)]">
+              1309 Coffeen Avenue, Suite #1200 &bull; Sheridan, WY 82801 &bull; United States
+            </span>
+          </div>
           <span className="font-mono text-[0.6rem] tracking-[0.1em] text-[oklch(0.40_0.02_240)]">
             Guiding the Way Forward. Always.
           </span>
