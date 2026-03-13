@@ -91,7 +91,7 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} Beacon Labs &mdash; a Beacon Momentum, LLC company. All rights reserved.
             </span>
             <span className="font-mono text-[0.55rem] tracking-[0.08em] text-[oklch(0.35_0.02_240)]">
-              1309 Coffeen Avenue, Suite 19387 &bull; Sheridan, WY 82801 &bull; United States
+              1309 Coffeen Avenue, Suite # 1200 &bull; Sheridan, WY 82801 &bull; (307) 461-5184
             </span>
           </div>
           <span className="font-mono text-[0.6rem] tracking-[0.1em] text-[oklch(0.40_0.02_240)]">
