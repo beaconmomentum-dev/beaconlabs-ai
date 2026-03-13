@@ -3,6 +3,7 @@ import { createServer } from "http";
 import path from "path";
 import { fileURLToPath } from "url";
 import Stripe from "stripe";
+import { sendPurchaseEvent } from "./meta-capi.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -221,6 +222,29 @@ async function startServer() {
       } catch (ghlErr) {
         // Non-fatal — log but don't fail the order confirmation
         console.error("GHL contact creation failed (non-fatal):", ghlErr);
+      }
+
+      // Fire server-side Meta CAPI Purchase event for improved attribution.
+      // event_id matches the browser-side fbq('track', 'Purchase') call for deduplication.
+      try {
+        await sendPurchaseEvent({
+          eventId: paymentIntent.id,
+          email,
+          firstName: firstName || "",
+          lastName: lastName || "",
+          value: paymentIntent.amount / 100, // Convert cents to dollars
+          currency: paymentIntent.currency?.toUpperCase() || "USD",
+          contentName: "AI Growth Blueprint",
+          ipAddress:
+            (req.headers["x-forwarded-for"] as string | undefined)?.split(",")[0].trim() ||
+            req.socket.remoteAddress ||
+            undefined,
+          userAgent: req.headers["user-agent"] || undefined,
+          eventSourceUrl: "https://beaconmomentum.com/growth-blueprint",
+        });
+      } catch (capiErr) {
+        // Non-fatal — log but don't fail the order confirmation
+        console.error("CAPI event failed (non-fatal):", capiErr);
       }
 
       res.json({

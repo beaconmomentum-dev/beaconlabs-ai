@@ -108,6 +108,17 @@ function CheckoutForm({
       } catch {
         // Non-fatal — order is confirmed in Stripe regardless
       }
+      // Fire browser-side Meta Pixel Purchase event.
+      // event_id = paymentIntent.id ensures deduplication with server-side CAPI event.
+      if (typeof window !== "undefined" && (window as any).fbq) {
+        (window as any).fbq("track", "Purchase", {
+          value: 997,
+          currency: "USD",
+          content_name: "AI Growth Blueprint",
+          content_type: "product",
+          num_items: 1,
+        }, { eventID: paymentIntent.id });
+      }
       // Redirect to thank-you page
       window.location.href = `/blueprint-thank-you?order=${paymentIntent.id}`;
     } else {
