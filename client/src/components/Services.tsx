@@ -67,6 +67,15 @@ const services = [
     period: "project",
   },
   {
+    icon: Bot,
+    title: "The AI COO System",
+    description:
+      "Your brutal, unvarnished accountability partner. An autonomous AI agent that ingests your calendar, task manager, and sent emails every Friday to deliver an objective performance review against your stated goals.",
+    tag: "Productivity",
+    price: "$997",
+    period: "one-time setup",
+  },
+  {
     icon: Handshake,
     title: "VSO Technology Partner Program",
     description:
